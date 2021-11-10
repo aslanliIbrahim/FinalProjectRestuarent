@@ -13,7 +13,7 @@ namespace FinalProjectRestorant.Models
         public int Id { get; set; }
         
         public string Image { get; set; }
-        [NotMapped]
+        [NotMapped, Required]
         public IFormFile Photo { get; set; }
         [Required, StringLength(maximumLength:100)]
         public string RestaurantName { get; set; }

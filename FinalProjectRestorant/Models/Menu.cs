@@ -12,7 +12,7 @@ namespace FinalProjectRestorant.Models
     {
         public int Id { get; set; }
         public string Image { get; set; }
-        [NotMapped]
+        [NotMapped,Required]
         public IFormFile Photo { get; set; }
         [Required, StringLength(maximumLength:50)]
         public string FoodName { get; set; }
