@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20211105121553_CreateChef.cs" />
+    <Compile Remove="Migrations\20211105121553_CreateChef.Designer.cs" />
+    <Compile Remove="Migrations\20211106072913_UpdateSlider.cs" />
+    <Compile Remove="Migrations\20211106072913_UpdateSlider.Designer.cs" />
+    <Compile Remove="Migrations\20211106073125_UpdateSlides.cs" />
+    <Compile Remove="Migrations\20211106073125_UpdateSlides.Designer.cs" />
+    <Compile Remove="Migrations\20211106073157_UpdateSlides.cs" />
+    <Compile Remove="Migrations\20211106073157_UpdateSlides.Designer.cs" />
+    <Compile Remove="Migrations\20211106073740_UpdateSlides.cs" />
+    <Compile Remove="Migrations\20211106073740_UpdateSlides.Designer.cs" />
+    <Compile Remove="Migrations\20211106074534_SlidesUpdate.cs" />
+    <Compile Remove="Migrations\20211106074534_SlidesUpdate.Designer.cs" />
+    <Compile Remove="Migrations\20211106074924_updateslides.cs" />
+    <Compile Remove="Migrations\20211106074924_updateslides.Designer.cs" />
+    <Compile Remove="Migrations\20211106075104_updateslides.cs" />
+    <Compile Remove="Migrations\20211106075104_updateslides.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.18">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\AdminPanel\Data\" />
+    <Folder Include="Areas\AdminPanel\Models\" />
+  </ItemGroup>
+
+</Project>

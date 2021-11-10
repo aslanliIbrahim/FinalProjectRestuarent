@@ -1,0 +1,76 @@
+﻿@model OurChef
+@{
+    ViewData["Title"] = "Update";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Example <small>Create</small></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form id="quickForm" method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="Id"/>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Photo"></label>
+                                <input asp-for="Photo" accept="Image/*" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Photo" class="text-danger"></span>
+
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+
+                                <label asp-for="Position"></label>
+                                <input asp-for="Position" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Position" class="text-danger"></span>
+
+                                <label asp-for="Face"></label>
+                                <input asp-for="Face" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Face" class="text-danger"></span>
+
+                                <label asp-for="Insta"></label>
+                                <input asp-for="Insta" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Insta" class="text-danger"></span>
+
+                                <label asp-for="Twit"></label>
+                                <input asp-for="Twit" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Twit" class="text-danger"></span>
+
+                                <label asp-for="AboutChef"></label>
+                                <input asp-for="AboutChef" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="AboutChef" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a asp-action="Index" class="btn btn-danger">Cancel</a>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section Script{
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
+

@@ -1,0 +1,37 @@
+﻿@model Setting
+@{
+    Layout = null;
+}
+
+<footer class="general-footer">
+    <div class="box-shadow"></div>
+    <section class="footer-side">
+        <div class="img">
+            <img src="~/../photos/navbar-photo/logo-2.png" alt="">
+        </div>
+        <div class="footer-text">
+            <p>
+                We don't care if we're doing haute cuisine or burgers and pizza.
+                <div class="footer-text-2">
+                    We just do it right. Always.
+                </div>
+            </p>
+        </div>
+        <div class="social-media">
+            
+            <a href="@Model.SocialMedia" id="face-book"><i class="fab fa-facebook-square"></i></a>
+            <a href="@Model.SocialMedia"><i class="fab fa-youtube"></i></a>
+            <a href="@Model.SocialMedia"><i class="fab fa-twitter-square"></i></a>
+            <a href="@Model.SocialMedia"><i class="fab fa-instagram"></i></a>
+        </div>
+
+    </section>
+
+    <section class="footer-about">
+        <p>
+            © 2021 Gourmet - @Model.Email- @Model.PhoneNumber - @Model.Adress - Restaurant
+            Template Handmade by
+            <a href="#">İbrahim Aslanlı</a>
+        </p>
+    </section>
+</footer>

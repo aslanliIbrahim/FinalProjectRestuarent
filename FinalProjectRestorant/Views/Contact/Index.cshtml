@@ -1,0 +1,125 @@
+﻿@model ContactVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main id="main">
+    <section>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.052775232489!2d49.74419201537426!3d40.45196887936107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403085da946625ff%3A0x2be4f3680f7341c8!2zWMSxcmRhbGFuIFBhcmvEsQ!5e0!3m2!1sen!2s!4v1634663486292!5m2!1sen!2s"
+                    width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <section id="send-message">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 up">
+                    <div class="col-lg-12 up-2">
+                        <h3>
+                            Send a Message
+                        </h3>
+                    </div>
+                    <div class="col-lg-12 up-2">
+                        <p>
+                            Potenti inceptos, facilisi, pariatur netus, scelerisque. Porta eum sapiente temporibus,
+                            placerat voluptates! Debitis necessitatibus fugit nesciunto malesuada consequat nostra
+                            accusamus commodi.
+                        </p>
+                        <br>
+                        <form method="post">
+                            <div class="inputs">
+                                <input asp-for="@Model.Name" class="name" placeholder="Full Name">
+                                <input asp-for="@Model.Email" class="email" placeholder="E-mail">
+                            </div>
+                            <br>
+                            <div class="inputs col-md-12">
+                                <textarea asp-for="@Model.Message" class="form-control form-value message" placeholder="Message">
+                                </textarea>
+
+                            </div>
+                            <br>
+                            <button class="anima-button circle-button btn-xs btn w-100" type="submit">
+                                <i class="fas fa-inbox"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 down">
+                    <div class="col-lg-12">
+                        <h3 class="col-lg-12">
+                            How To Reach Us
+                        </h3>
+                        <div class="col-lg-12">
+                            <p>
+                                @Model.HowToReach
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="fa-ul down1">
+                                    <li>
+                                        <i class="fab fa-skype"></i>
+                                        @Model.Email
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-headset"></i>
+                                        @Model.PhoneNumber
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-mail-bulk"></i>
+                                        @Model.Email
+                                    </li>
+                                    <li>
+                                        <i class="fab fa-skype"></i>
+                                        @Model.Email
+
+                                    </li>
+                                    <li>
+                                        <i class="fab fa-skype"></i>
+                                        @Model.Email
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="fa-ul down1">
+                                    <li>
+                                        <i class="fas fa-house-user"></i>
+                                        @Model.Adress
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-house-user"></i>
+                                        @Model.Adress
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="btn-group btn-group-icons">
+                            <a href="@Model.SocialMedia" class="btn btn-default contact">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="@Model.SocialMedia" class="btn btn-default contact">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="@Model.SocialMedia" class="btn btn-default contact">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a href="@Model.SocialMedia" class="btn btn-default contact">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+

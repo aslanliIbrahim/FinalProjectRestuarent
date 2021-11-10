@@ -1,0 +1,92 @@
+﻿@model MenuVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="showcase">
+    <div class="video-container">
+        <div class="video">
+            <!-- <video autoplay loop muted src="../videos/WhatsApp Video 2021-10-17 at 16.27.37.mp4"></video> -->
+            <img src="../photos/Our-chef-photo/@Model.slides.ElementAt(1).Image" alt="">
+        </div>
+    </div>
+</section>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+            <div>
+                <section class="slider-text-area">
+                    <div class="slider-text">
+                        <h5 data-aos="fade-down">@Model.slides.ElementAt(1).Saw</h5>
+                        <h2 data-aos="fade-down">@Model.slides.ElementAt(1).RestaurantName</h2>
+                        <div class="text-area col-sm-12" data-aos="fade-down">
+                            <p>
+                                @Model.slides.ElementAt(1).Description
+                            </p>
+                        </div>
+                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="menu">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-4 menu-card">
+                <a href="">
+                    <img src="../photos/Menu-photo/@Model.menus.ElementAt(0).Image" alt="">
+
+                    <h2>@Model.menus.ElementAt(0).FoodName</h2>
+                </a>
+            </div>
+            <div class="col-md-4 menu-card">
+                <a href="">
+                    <img src="../photos/Menu-photo/@Model.menus.ElementAt(1).Image" alt="">
+
+                    <h2>@Model.menus.ElementAt(1).FoodName</h2>
+
+                </a>
+            </div>
+            <div class="col-md-4 menu-card">
+                <a href="">
+                    <img src="../photos/Menu-photo/@Model.menus.ElementAt(2).Image" alt="">
+
+                    <h2>@Model.menus.ElementAt(2).FoodName</h2>
+
+                </a>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-4 menu-card">
+                <a href="../html/bigmenu.html">
+                    <img src="../photos/Menu-photo/@Model.menus.ElementAt(3).Image" alt="">
+
+                    <h2>@Model.menus.ElementAt(3).FoodName</h2>
+
+                </a>
+            </div>
+            <div class="col-md-4 menu-card">
+                <a href="">
+                    <img src="../photos/Menu-photo/@Model.menus.ElementAt(4).Image" alt="">
+
+                    <h2>@Model.menus.ElementAt(4).FoodName</h2>
+
+                </a>
+            </div>
+            <div class="col-md-4 menu-card">
+                <a href="">
+                    <img src="../photos/Menu-photo/@Model.menus.ElementAt(5).Image" alt="">
+
+                    <h2>@Model.menus.ElementAt(5).FoodName</h2>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+

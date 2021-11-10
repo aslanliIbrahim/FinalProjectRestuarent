@@ -1,0 +1,80 @@
+﻿@model OurChefVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="showcase">
+    <div class="video-container">
+        <div class="video">
+            <!-- <video autoplay loop muted src="../videos/WhatsApp Video 2021-10-17 at 16.27.37.mp4"></video> -->
+            <img src="../photos/Our-chef-photo/@Model.slides.ElementAt(0).Image" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+<div class="container ">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+            <div>
+                <section class="slider-text-area">
+                    <div class="slider-text">
+                        <h5 data-aos="fade-down">@Model.slides.ElementAt(0).Saw</h5>
+                        <h2 data-aos="fade-down">@Model.slides.ElementAt(0).RestaurantName</h2>
+                        <div class="text-area col-sm-12" data-aos="fade-down">
+                            <p>
+                                @Model.slides.ElementAt(0).Description
+                            </p>
+                        </div>
+                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="our-chef">
+    <div class="container content">
+        <div class="row">
+            @foreach (var chef in Model.Ourchef)
+            {
+                <div class="col-md-4 ">
+                    <div class="chef">
+                        <div class="chef-img">
+                            <a href="#">
+                                <img src="../photos/Our-chef-photo/@chef.Image" alt="">
+                            </a>
+                        </div>
+                        <div class="about-chef">
+                            <h2>@chef.Name</h2>
+                            <h4>@chef.Position</h4>
+
+                            <div class="chef-connection">
+                                <div class="social-media">
+                                    <a href="@chef.Face" class="face"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="@chef.Insta" class="insta"><i class="fab fa-instagram-square"></i></a>
+                                    <a href="@chef.Twit" class="twit"><i class="fab fa-twitter-square"></i></a>
+                                </div>
+
+
+                                <div class="short-about">
+                                    <p>
+                                        @chef.AboutChef
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+
+    </div>
+</section>
+
