@@ -59,5 +59,15 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        //delete is start here..
+        public IActionResult Delete(int? id)
+        {
+            var menus = _context.SteakBigMenus.FirstOrDefault(st => st.Id == id);
+            _context.SteakBigMenus.Remove(menus);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+        //end here..
     }
 }
