@@ -25,7 +25,7 @@
                                 @Model.slides.ElementAt(2).Description
                             </p>
                         </div>
-                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                        <a asp-action="Index" asp-controller="Menu" class="btn button" data-aos="fade-down">View menu</a>
                     </div>
                 </section>
             </div>
@@ -54,7 +54,7 @@
                         </a>
                         <div class="price">
                             <p>$ @bt.Price</p>
-                            <p>@bt.Pieces pieces</p>
+                            <p>@bt.Pieces </p>
                         </div>
                     </div>
 
