@@ -1,0 +1,79 @@
+﻿@model BreakFastVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="showcase">
+    <div class="video-container">
+        <div class="video">
+            <!-- <video autoplay loop muted src="../videos/WhatsApp Video 2021-10-17 at 16.27.37.mp4"></video> -->
+            <img src="~/../photos/Menu-photo/@Model.slides.ElementAt(2).Image" alt="">
+        </div>
+    </div>
+</section>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+            <div>
+                <section class="slider-text-area">
+                    <div class="slider-text">
+                        <h5 data-aos="fade-down">@Model.slides.ElementAt(2).Saw</h5>
+                        <h2 data-aos="fade-down">@Model.slides.ElementAt(2).RestaurantName</h2>
+                        <div class="text-area col-sm-12" data-aos="fade-down">
+                            <p>
+                                @Model.slides.ElementAt(2).Description
+                            </p>
+                        </div>
+                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="bigmenu">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-12 button-side">
+                <span>
+                    Steaks
+                </span>
+                <a asp-action="Index" asp-controller="Menu" class="salam"> <i class="fas fa-arrow-left"></i> Album List </a>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var bt in Model.breakFasts)
+            {
+                <div class="col-md-4 big-menu-card">
+                    <div class="img-box">
+                        <a href="">
+                            <img src="../photos/Menu-photo/@bt.Image" alt="">
+                        </a>
+                        <div class="price">
+                            <p>$ @bt.Price</p>
+                            <p>@bt.Pieces pieces</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-box-write">
+                        <h3>@bt.BigMenuFoodName</h3>
+                        <p>
+                            @bt.Ingredient
+                        </p>
+                        <hr>
+                        <p>
+                            Served with @bt.Servis
+                        </p>
+                    </div>
+                </div>
+            }
+
+            <br /><br />
+        </div>
+
+    </div>
+</section>
+
