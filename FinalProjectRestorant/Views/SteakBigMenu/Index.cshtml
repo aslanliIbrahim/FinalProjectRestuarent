@@ -18,11 +18,11 @@
             <div>
                 <section class="slider-text-area">
                     <div class="slider-text">
-                        <h5 data-aos="fade-down">@Model.slides.ElementAt(2).Saw"</h5>
-                        <h2 data-aos="fade-down">@Model.slides.ElementAt(2).RestaurantName"</h2>
+                        <h5 data-aos="fade-down">@Model.slides.ElementAt(2).Saw</h5>
+                        <h2 data-aos="fade-down">@Model.slides.ElementAt(2).RestaurantName</h2>
                         <div class="text-area col-sm-12" data-aos="fade-down">
                             <p>
-                                @Model.slides.ElementAt(2).Description"
+                                @Model.slides.ElementAt(2).Description
                             </p>
                         </div>
                         <a href="#" class="btn button" data-aos="fade-down">View menu</a>
@@ -41,151 +41,39 @@
                 <span>
                     Steaks
                 </span>
-                <a href="#" class="salam"> <i class="fas fa-arrow-left"></i> Album List </a>
+                <a asp-action="Index" asp-controller="Menu" class="salam"> <i class="fas fa-arrow-left"></i> Album List </a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 big-menu-card">
-                <div class="img-box">
-                    <a href="">
-                        <img src="../photos/Menu-photo/image-31.jpg" alt="">
-                    </a>
-                    <div class="price">
-                        <p>$ 15</p>
-                        <p>3 pieces</p>
+            @foreach (var st in Model.steakBigMenus)
+            {
+                <div class="col-md-4 big-menu-card">
+                    <div class="img-box">
+                        <a href="">
+                            <img src="../photos/Menu-photo/@st.Image" alt="">
+                        </a>
+                        <div class="price">
+                            <p>$ @st.Price</p>
+                            <p>@st.Pieces pieces</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-box-write">
+                        <h3>@st.BigMenuFoodName</h3>
+                        <p>
+                           @st.Ingredient
+                        </p>
+                        <hr>
+                        <p>
+                            Served with @st.Servis
+                        </p>
                     </div>
                 </div>
+            }
 
-                <div class="menu-box-write">
-                    <h3>Beef Hamburgers</h3>
-                    <p>
-                        Interdum iusto pulvinar consequuntur augue optio reggiano repellat fugaurus expedita fusce
-                        temporibus est odit mi quosliquid sempero veritatis dignissimoso parmigiano.
-                    </p>
-                    <hr>
-                    <p>
-                        Served with fired chips, salad and sauces
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 big-menu-card">
-                <div class="img-box">
-                    <a href="">
-                        <img src="../photos/Menu-photo/image-31.jpg" alt="">
-                    </a>
-                    <div class="price">
-                        <p>$ 15</p>
-                        <p>3 pieces</p>
-                    </div>
-                </div>
-
-                <div class="menu-box-write">
-                    <h3>Beef Hamburgers</h3>
-                    <p>
-                        Interdum iusto pulvinar consequuntur augue optio reggiano repellat fugaurus expedita fusce
-                        temporibus est odit mi quosliquid sempero veritatis dignissimoso parmigiano.
-                    </p>
-                    <hr>
-                    <p>
-                        Served with fired chips, salad and sauces
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 big-menu-card">
-                <div class="img-box">
-                    <a href="">
-                        <img src="../photos/Menu-photo/image-31.jpg" alt="">
-                    </a>
-                    <div class="price">
-                        <p>$ 15</p>
-                        <p>3 pieces</p>
-                    </div>
-                </div>
-
-                <div class="menu-box-write">
-                    <h3>Beef Hamburgers</h3>
-                    <p>
-                        Interdum iusto pulvinar consequuntur augue optio reggiano repellat fugaurus expedita fusce
-                        temporibus est odit mi quosliquid sempero veritatis dignissimoso parmigiano.
-                    </p>
-                    <hr>
-                    <p>
-                        Served with fired chips, salad and sauces
-                    </p>
-                </div>
-            </div>
+            <br /><br />
         </div>
-        <div class="row">
-            <div class="col-md-4 big-menu-card">
-                <div class="img-box">
-                    <a href="">
-                        <img src="../photos/Menu-photo/image-31.jpg" alt="">
-                    </a>
-                    <div class="price">
-                        <p>$ 15</p>
-                        <p>3 pieces</p>
-                    </div>
-                </div>
-
-                <div class="menu-box-write">
-                    <h3>Beef Hamburgers</h3>
-                    <p>
-                        Interdum iusto pulvinar consequuntur augue optio reggiano repellat fugaurus expedita fusce
-                        temporibus est odit mi quosliquid sempero veritatis dignissimoso parmigiano.
-                    </p>
-                    <hr>
-                    <p>
-                        Served with fired chips, salad and sauces
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 big-menu-card">
-                <div class="img-box">
-                    <a href="">
-                        <img src="../photos/Menu-photo/image-31.jpg" alt="">
-                    </a>
-                    <div class="price">
-                        <p>$ 15</p>
-                        <p>3 pieces</p>
-                    </div>
-                </div>
-
-                <div class="menu-box-write">
-                    <h3>Beef Hamburgers</h3>
-                    <p>
-                        Interdum iusto pulvinar consequuntur augue optio reggiano repellat fugaurus expedita fusce
-                        temporibus est odit mi quosliquid sempero veritatis dignissimoso parmigiano.
-                    </p>
-                    <hr>
-                    <p>
-                        Served with fired chips, salad and sauces
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 big-menu-card">
-                <div class="img-box">
-                    <a href="">
-                        <img src="../photos/Menu-photo/image-31.jpg" alt="">
-                    </a>
-                    <div class="price">
-                        <p>$ 15</p>
-                        <p>3 pieces</p>
-                    </div>
-                </div>
-
-                <div class="menu-box-write">
-                    <h3>Beef Hamburgers</h3>
-                    <p>
-                        Interdum iusto pulvinar consequuntur augue optio reggiano repellat fugaurus expedita fusce
-                        temporibus est odit mi quosliquid sempero veritatis dignissimoso parmigiano.
-                    </p>
-                    <hr>
-                    <p>
-                        Served with fired chips, salad and sauces
-                    </p>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </section>
 

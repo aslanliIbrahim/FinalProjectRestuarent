@@ -23,6 +23,7 @@ namespace FinalProjectRestorant.DAL
         public DbSet<OurChef> ourChefs { get; set; }
         public DbSet<Menu> Menus { get; set; }
         public DbSet<SteakBigMenu> SteakBigMenus { get; set; }
+        public DbSet<BreakFast> breakFasts { get; set; }
     }
 
    

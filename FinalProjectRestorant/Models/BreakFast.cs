@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace FinalProjectRestorant.Models
 {
-    public class SteakBigMenu
+    public class BreakFast
     {
         public int Id { get; set; }
         public string Image { get; set; }
-        [NotMapped,Required]
+        [NotMapped, Required]
         public IFormFile Photo { get; set; }
-        [Required,StringLength(maximumLength:100)]
+        [Required, StringLength(maximumLength: 100)]
         public string BigMenuFoodName { get; set; }
-        [Required,StringLength(maximumLength:225)]
+        [Required, StringLength(maximumLength: 225)]
         public string Ingredient { get; set; }
-        [Required,StringLength(maximumLength:100)]
+        [Required, StringLength(maximumLength: 100)]
         public string Servis { get; set; }
         [Required]
         public double Price { get; set; }
