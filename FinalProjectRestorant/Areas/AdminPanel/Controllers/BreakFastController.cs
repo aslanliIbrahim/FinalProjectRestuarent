@@ -3,6 +3,7 @@ using FinalProjectRestorant.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -59,6 +60,61 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        //update is start
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null)
+                return NotFound();
+            var breakFast = await _context.breakFasts.FirstOrDefaultAsync(bt => bt.Id == id);
+            if (breakFast == null)
+                return NotFound();
+            return View(breakFast);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, BreakFast breakFast)
+        {
+            if (!ModelState.IsValid)
+                return View();
+            if (id == null)
+                return NotFound();
+
+            if (breakFast == null)
+                return NotFound();
+
+            //remove old img
+            string enviroment = _env.WebRootPath;
+            //string folderpath = Path.Combine(enviroment, "photos", "Our-chef-photo", slides.Photo.FileName) ;
+            //FileInfo oldfile = new FileInfo(folderpath);
+            //if (System.IO.File.Exists(folderpath))
+            //{
+            //    oldfile.Delete();
+            //};
+            //remove end
+
+            //new img in local folder
+            string filename = Guid.NewGuid().ToString() + '-' + breakFast.Photo.FileName;
+            string newSlider = Path.Combine(enviroment, "photos", "Menu-photo", filename);
+            using (FileStream newFile = new FileStream(newSlider, FileMode.Create))
+            {
+                breakFast.Photo.CopyTo(newFile);
+            }
+
+            //new img end   
+            var breakfastDb = await _context.breakFasts.FirstOrDefaultAsync(bt => bt.Id == id);
+            breakfastDb.Image = filename;
+            breakfastDb.BigMenuFoodName = breakFast.BigMenuFoodName;
+            breakfastDb.Ingredient = breakFast.Ingredient;
+            breakfastDb.Pieces = breakFast.Pieces;
+            breakfastDb.Price = breakFast.Price;
+            breakfastDb.Servis = breakFast.Servis;
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+        //update is end
 
         //delete is start
         public IActionResult Delete(int? id)
