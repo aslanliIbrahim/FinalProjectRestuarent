@@ -74,7 +74,7 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken] 
         public async Task<IActionResult> Update(int? id, Slides slides)
         {
 

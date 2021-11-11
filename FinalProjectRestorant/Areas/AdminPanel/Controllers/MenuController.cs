@@ -3,6 +3,7 @@ using FinalProjectRestorant.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -60,8 +61,66 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        //update is here.
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null)
+                return NotFound();
+            var menus = await _context.Menus.FirstOrDefaultAsync(mn => mn.Id == id);
+            if (menus == null)
+                return NotFound();
+            return View(menus);
+            
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, Menu menu)
+        {
 
+            if (!ModelState.IsValid)
+                return View();
+            if (id == null)
+                return NotFound();
+
+            if (menu == null)
+                return NotFound();
+
+            //remove old img
+            string enviroment = _env.WebRootPath;
+            //string folderpath = Path.Combine(enviroment, "photos", "Our-chef-photo", slides.Photo.FileName) ;
+            //FileInfo oldfile = new FileInfo(folderpath);
+            //if (System.IO.File.Exists(folderpath))
+            //{
+            //    oldfile.Delete();
+            //};
+            //remove end
+
+            //new img in local folder
+            string filename = Guid.NewGuid().ToString() + '-' + menu.Photo.FileName;
+            string newSlider = Path.Combine(enviroment, "photos", "Menu-photo", filename);
+            using (FileStream newFile = new FileStream(newSlider, FileMode.Create))
+            {
+                menu.Photo.CopyTo(newFile);
+            }
+
+            //new img end 
+            var menuDb = await _context.Menus.FirstOrDefaultAsync(mn => mn.Id == id);
+            menuDb.Image = filename;
+            menuDb.FoodName = menu.FoodName;            
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+        //updatte is end here.
+
+        //delete is here.
+        public IActionResult Delete(int? id)
+        {
+            var menus = _context.Menus.FirstOrDefault(mn => mn.Id == id);
+            _context.Menus.Remove(menus);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
 
 
     }
