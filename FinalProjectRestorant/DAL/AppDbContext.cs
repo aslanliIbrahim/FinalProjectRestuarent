@@ -22,6 +22,7 @@ namespace FinalProjectRestorant.DAL
         public DbSet<Slides> Slides { get; set; }
         public DbSet<OurChef> ourChefs { get; set; }
         public DbSet<Menu> Menus { get; set; }
+        public DbSet<SteakBigMenu> SteakBigMenus { get; set; }
     }
 
    
