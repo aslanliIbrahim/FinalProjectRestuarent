@@ -1,4 +1,4 @@
-﻿@model PizzaVM
+﻿@model StarTersVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,7 +8,6 @@
         <div class="video">
             <!-- <video autoplay loop muted src="../videos/WhatsApp Video 2021-10-17 at 16.27.37.mp4"></video> -->
             <img src="~/../photos/Our-chef-photo/@Model.slides.ElementAt(2).Image" alt="">
-
         </div>
     </div>
 </section>
@@ -46,27 +45,27 @@
             </div>
         </div>
         <div class="row">
-            @foreach (var bt in Model.pizzas)
+            @foreach (var st in Model.Starters)
             {
                 <div class="col-md-4 big-menu-card">
                     <div class="img-box">
                         <a href="">
-                            <img src="../photos/Menu-photo/@bt.Image" alt="">
+                            <img src="../photos/Menu-photo/@st.Image" alt="">
                         </a>
                         <div class="price">
-                            <p>$ @bt.Price</p>
-                            <p>@bt.Pieces </p>
+                            <p>$ @st.Price</p>
+                            <p>@st.Pieces </p>
                         </div>
                     </div>
 
                     <div class="menu-box-write">
-                        <h3>@bt.BigMenuFoodName</h3>
+                        <h3>@st.BigMenuFoodName</h3>
                         <p>
-                            @bt.Ingredient
+                            @st.Ingredient
                         </p>
                         <hr>
                         <p>
-                            Served with @bt.Servis
+                            Served with @st.Servis
                         </p>
                     </div>
                 </div>
@@ -77,6 +76,8 @@
 
     </div>
 </section>
+
+
 
 
 
