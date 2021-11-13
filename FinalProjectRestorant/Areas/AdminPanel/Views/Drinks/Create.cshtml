@@ -1,0 +1,79 @@
+﻿@model Drinks
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Example <small>Create</small></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form id="quickForm" enctype="multipart/form-data" method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Photo"></label>
+                                <input asp-for="Photo" class="form-control" placeholder="Enter Text" accept="image">
+                                <span asp-validation-for="Photo" class="text-danger"></span>
+
+                                <label asp-for="BigMenuFoodName"></label>
+                                <input asp-for="BigMenuFoodName" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="BigMenuFoodName" class="text-danger"></span>
+
+                                <label asp-for="Ingredient"></label>
+                                <input asp-for="Ingredient" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Ingredient" class="text-danger"></span>
+
+
+                                <label asp-for="Pieces"></label>
+                                <input asp-for="Pieces" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Pieces" class="text-danger"></span>
+
+                                <label asp-for="Servis"></label>
+                                <input asp-for="Servis" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Servis" class="text-danger"></span>
+
+                                <label asp-for="Price"></label>
+                                <input asp-for="Price" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Price" class="text-danger"></span>
+
+
+
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            @*<button type="submit" class="btn btn-danger">Cancel</button>*@
+                            <a asp-action="Index" class="btn btn-danger">Cancel</a>
+
+
+
+
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section Script{
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
+
