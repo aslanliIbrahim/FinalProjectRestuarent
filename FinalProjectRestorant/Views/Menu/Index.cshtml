@@ -44,7 +44,7 @@
                 </a>
             </div>
             <div class="col-md-4 menu-card">
-                <a href="">
+                <a asp-action="Index" asp-controller="BreakFast">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(1).Image" alt="">
 
                     <h2>@Model.menus.ElementAt(1).FoodName</h2>
@@ -52,7 +52,7 @@
                 </a>
             </div>
             <div class="col-md-4 menu-card">
-                <a href="">
+                <a asp-action="Index" asp-controller="PizzaMenu">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(2).Image" alt="">
 
                     <h2>@Model.menus.ElementAt(2).FoodName</h2>
@@ -63,7 +63,7 @@
         <br><br>
         <div class="row">
             <div class="col-md-4 menu-card">
-                <a href="../html/bigmenu.html">
+                <a asp-action="Index" asp-controller="Starters">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(3).Image" alt="">
 
                     <h2>@Model.menus.ElementAt(3).FoodName</h2>
@@ -71,7 +71,7 @@
                 </a>
             </div>
             <div class="col-md-4 menu-card">
-                <a href="">
+                <a asp-action="Index" asp-controller="Desserts">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(4).Image" alt="">
 
                     <h2>@Model.menus.ElementAt(4).FoodName</h2>
@@ -79,7 +79,7 @@
                 </a>
             </div>
             <div class="col-md-4 menu-card">
-                <a href="">
+                <a asp-action="Index" asp-controller="Drinks">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(5).Image" alt="">
 
                     <h2>@Model.menus.ElementAt(5).FoodName</h2>

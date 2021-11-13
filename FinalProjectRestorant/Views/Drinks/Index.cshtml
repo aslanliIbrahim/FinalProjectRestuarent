@@ -1,4 +1,4 @@
-﻿@model SteakBigMenuVM
+﻿@model DrinkVm
 @{
     ViewData["Title"] = "Index";
 }
@@ -25,7 +25,7 @@
                                 @Model.slides.ElementAt(2).Description
                             </p>
                         </div>
-                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                        <a asp-action="Index" asp-controller="Menu" class="btn button" data-aos="fade-down">View menu</a>
                     </div>
                 </section>
             </div>
@@ -45,27 +45,27 @@
             </div>
         </div>
         <div class="row">
-            @foreach (var st in Model.steakBigMenus)
+            @foreach (var dt in Model.drinks)
             {
                 <div class="col-md-4 big-menu-card">
                     <div class="img-box">
                         <a href="">
-                            <img src="../photos/Menu-photo/@st.Image" alt="">
+                            <img src="../photos/Menu-photo/@dt.Image" alt="">
                         </a>
                         <div class="price">
-                            <p>$ @st.Price</p>
-                            <p>@st.Pieces pieces</p>
+                            <p>$ @dt.Price</p>
+                            <p>@dt.Pieces </p>
                         </div>
                     </div>
 
                     <div class="menu-box-write">
-                        <h3>@st.BigMenuFoodName</h3>
+                        <h3>@dt.BigMenuFoodName</h3>
                         <p>
-                           @st.Ingredient
+                            @dt.Ingredient
                         </p>
                         <hr>
                         <p>
-                            Served with @st.Servis
+                             @dt.Servis
                         </p>
                     </div>
                 </div>
@@ -73,7 +73,9 @@
 
             <br /><br />
         </div>
-        
+
     </div>
 </section>
+
+
 
