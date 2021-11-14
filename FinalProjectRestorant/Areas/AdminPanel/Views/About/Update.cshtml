@@ -1,0 +1,79 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Update";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Example <small>Update</small></h3>
+                    </div>
+                    <!-- /.card-header -->  
+                    <!-- form start -->
+                    <form id="quickForm" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Photo"></label>
+                                <input asp-for="Photo" class="form-control" placeholder="Enter Text" accept="image">
+                                <span asp-validation-for="Photo" class="text-danger"></span>
+
+                                <label asp-for="Title"></label>
+                                <input asp-for="Title" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Title" class="text-danger"></span>
+
+                                <label asp-for="Description"></label>
+                                <input asp-for="Description" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Description" class="text-danger"></span>
+
+
+                                <label asp-for="GourMet"></label>
+                                <input asp-for="GourMet" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="GourMet" class="text-danger"></span>
+
+                                <label asp-for="CleanTastes"></label>
+                                <input asp-for="CleanTastes" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="CleanTastes" class="text-danger"></span>
+
+                                <label asp-for="ModernEnvironment"></label>
+                                <input asp-for="ModernEnvironment" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="ModernEnvironment" class="text-danger"></span>
+
+                                <label asp-for="AboutFood"></label>
+                                <input asp-for="AboutFood" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="AboutFood" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a asp-action="Index" class="btn btn-danger">Cancel</a>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section Script{
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+
+

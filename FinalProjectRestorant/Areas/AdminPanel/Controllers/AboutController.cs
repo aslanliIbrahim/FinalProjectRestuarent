@@ -3,6 +3,7 @@ using FinalProjectRestorant.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,7 +62,60 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //update is start
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null)
+                return NotFound();
+            var abouts = await _context.Abouts.FirstOrDefaultAsync(ab => ab.Id == id);
+            if (abouts == null)
+                return NotFound();
+            return View(abouts);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, About about)
+        {
+            if (!ModelState.IsValid)
+                return View();
+            if (id == null)
+                return NotFound();
+
+            if (about == null)
+                return NotFound();
+
+            //remove old img
+            string enviroment = _env.WebRootPath;
+            //string folderpath = Path.Combine(enviroment, "photos", "Our-chef-photo", slides.Photo.FileName) ;
+            //FileInfo oldfile = new FileInfo(folderpath);
+            //if (System.IO.File.Exists(folderpath))
+            //{
+            //    oldfile.Delete();
+            //};
+            //remove end
+
+            //new img in local folder
+            string filename = Guid.NewGuid().ToString() + '-' + about.Photo.FileName;
+            string newSlider = Path.Combine(enviroment, "photos", "about-photo", filename);
+            using (FileStream newFile = new FileStream(newSlider, FileMode.Create))
+            {
+                about.Photo.CopyTo(newFile);
+            }
+
+            //new img end   
+            var AboutDB = await _context.Abouts.FirstOrDefaultAsync(bt => bt.Id == id);
+            AboutDB.Image = filename;
+            AboutDB.Title = about.Title;
+            AboutDB.Description = about.Description;
+            AboutDB.GourMet = about.GourMet;
+            AboutDB.CleanTastes = about.CleanTastes;
+            AboutDB.ModernEnvironment = about.ModernEnvironment;
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+        //update is end
 
 
 
