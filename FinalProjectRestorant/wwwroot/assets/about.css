@@ -396,6 +396,7 @@ header .container nav .nav-list li:hover > .menu-table {
   line-height: 25px;
   font-weight: 300;
   color: #737373;
+  text-align: center;
 }
 
 .card-system {

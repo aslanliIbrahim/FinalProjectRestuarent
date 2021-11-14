@@ -1,5 +1,7 @@
 ﻿using FinalProjectRestorant.DAL;
+using FinalProjectRestorant.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +16,16 @@ namespace FinalProjectRestorant.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            AboutVM aboutVM = new AboutVM
+            {
+                slides = _context.Slides.ToList(),
+                desserts = await _context.desserts.ToListAsync(),
+                about = await _context.Abouts.ToListAsync(),
+                aboutCards = await _context.AboutCards.ToListAsync()
+            };
+            return View(aboutVM);
         }
     }
 }

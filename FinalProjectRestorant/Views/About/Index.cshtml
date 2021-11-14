@@ -1,0 +1,153 @@
+﻿@model AboutVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<link rel="stylesheet" href="~/../assets/about.css" />
+
+
+<section class="content">
+    <section class="section-empty">
+        <div class="container content">
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>
+                        @Model.desserts.ElementAt(1).Ingredient
+                       
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <p>
+                        @Model.about.ElementAt(0).AboutFood
+                    </p>
+                </div>
+
+
+                <div class="col-lg-4">
+                    <a asp-action="Index" asp-controller="Desserts" class="img-box">
+                        <img src="../photos/about-photo/@Model.about.ElementAt(1).Image" alt="" class="circle">
+                    </a>
+                </div>
+            </div>
+            <div class="row ">
+
+                <div class="col-lg-2">
+                    <a asp-action="Index" asp-controller="Desserts" class="img-box">
+                        <img class="circle" src="../photos/about-photo/@Model.about.ElementAt(1).Image" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-3 d-flex align-items-center responsive">
+                    <div>
+                        <i class="fas fa-utensils icons"></i>
+                    </div>
+                    <div>
+                        <h4 class="responsive-text">
+                            Gourmet template
+                        </h4>
+                        <p class="responsive-text2">
+                            @Model.about.ElementAt(0).GourMet
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 d-flex align-items-center responsive">
+                    <div>
+                        <i class="fas fa-coffee icons"></i>
+                    </div>
+                    <div>
+                        <h4 class="responsive-text">
+                            Clean tastes
+                        </h4>
+                        <p class="responsive-text2">
+                            @Model.about.ElementAt(0).CleanTastes
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 d-flex align-items-center responsive">
+                    <div>
+                        <i class="fab fa-artstation icons"></i>
+                    </div>
+                    <div>
+                        <h4 class="responsive-text">
+                            Modern environment
+                        </h4>
+                        <p class="responsive-text2">
+                            @Model.about.ElementAt(0).CleanTastes
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-work">
+        <div class="parallax" data-parallax="scroll" data-image-src="../photos/about-photo/@Model.about.ElementAt(0).Image"
+             data-z-index="-100">
+
+            <div class="col-md-8 paragraph">
+                <p class="text-up">@Model.about.ElementAt(0).Title</p>
+                <h2 class="weight">
+                    Our Philosopy
+                </h2>
+                <p>
+                    @*<div>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolorem que
+                        </div>*@
+                    <div class="text-down">
+                        @Model.about.ElementAt(0).Description
+                    </div>
+                    <br>
+                    <img src="../photos/about-photo/sign.png" alt="">
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!--Card area is strat here-->
+    <section class="card-system">
+        <div class="container content">
+            <div class="row">
+                @foreach (var card in Model.aboutCards)
+                {
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <a asp-action="Index" asp-controller="Desserts" class="image-tag">
+                                    <img src="../photos/about-photo/@card.Image" alt="">
+                                </a>
+                            </div>
+                            <div class="card-text">
+                                <div class="card-text-up">
+                                    <h5>
+                                        @card.Title
+                                    </h5>
+                                </div>
+                                <div class="card-text-down">
+                                    <p>
+                                        @card.Description
+                                    </p>
+                                </div>
+                                <a asp-action="Index" asp-controller="Desserts" class="btn-text">
+                                    <div class="btn-inside">
+
+                                        Enter Now
+
+                                        <div class="arrow">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </section>
+
+</section>
