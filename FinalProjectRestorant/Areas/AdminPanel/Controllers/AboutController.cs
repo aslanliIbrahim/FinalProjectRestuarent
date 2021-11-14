@@ -60,5 +60,19 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+
+
+
+
+        //delete is start
+        public IActionResult Delete(int? id)
+        {
+            var about = _context.Abouts.FirstOrDefault(at => at.Id == id);
+            _context.Abouts.Remove(about);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+        //delete is end
     }
 }
