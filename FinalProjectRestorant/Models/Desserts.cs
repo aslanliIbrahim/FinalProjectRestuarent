@@ -24,5 +24,6 @@ namespace FinalProjectRestorant.Models
         public double Price { get; set; }
         [Required]
         public string Pieces { get; set; }
+        public Order Order { get; set; }
     }
 }
