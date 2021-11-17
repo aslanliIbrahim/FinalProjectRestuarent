@@ -31,6 +31,7 @@ namespace FinalProjectRestorant.DAL
         public DbSet<About> Abouts { get; set; }
         public DbSet<AboutCard> AboutCards { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<AdminOrder> AdminOrders { get; set; }
     }
 
    

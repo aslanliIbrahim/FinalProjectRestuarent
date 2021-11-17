@@ -1,4 +1,5 @@
 ﻿using FinalProjectRestorant.DAL;
+using FinalProjectRestorant.Models;
 using FinalProjectRestorant.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -32,17 +33,42 @@ namespace FinalProjectRestorant.Controllers
         }
         public async Task<IActionResult> SteakDetail(int? id)
         {
+            //return Content(Request.Form["Count"]);
+
             OrderVM orders = new OrderVM
             {
+                Slides = _context.Slides.ToList(),
                 Order =await _context.SteakBigMenus.FirstOrDefaultAsync(p => p.Id == id),
 
             };
-            //if (orders.Order == null)
-            //    return ();
-           
-          
-            
+            if (orders.Order == null)
+                return NotFound();
+
+                
             return View(orders);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SteakDetail(SteakBigMenu steakBig)
+        {
+            //if (!ModelState.IsValid) return View(steakBig);
+
+            //OrderVM orderVM = new OrderVM
+            //{
+            //    Image = steakBig.Image,
+            //    FoodName = steakBig.BigMenuFoodName,
+            //    Price = steakBig.Price
+            //};
+            AdminOrder adminOrder = new AdminOrder
+            {
+                Image = steakBig.Image,
+                NameOfFood = steakBig.BigMenuFoodName,
+                Price = steakBig.Price
+            };
+            _context.AdminOrders.Add(adminOrder);
+            await _context.SaveChangesAsync();
+            //Home sehifeye qayidacag burani fix edersen sonra;
+            return RedirectToAction("Index","Menu");
         }
 
 

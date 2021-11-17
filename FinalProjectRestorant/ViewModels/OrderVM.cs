@@ -16,5 +16,9 @@ namespace FinalProjectRestorant.ViewModels
         public List<Desserts> Desserts { get; set; }
         public List<Drinks> Drinks { get; set; }
         public SteakBigMenu Order { get; set; }
+        public AdminOrder AdminOrders { get; set; }
+        public string Image { get; set; }
+        public double Price { get; set; }
+        public string FoodName { get; set; }
     }
 }
