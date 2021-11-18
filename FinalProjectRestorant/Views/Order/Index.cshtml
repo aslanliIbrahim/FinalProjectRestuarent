@@ -1,4 +1,4 @@
-﻿
+﻿@model OrderVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -6,7 +6,7 @@
 <section class="showcase">
     <div class="video-container">
         <div class="video">
-            <img src="../photos/reservation-photo/bg-27.jpg" alt="">
+            <img src="~/../photos/Our-chef-photo/@Model.Slides.ElementAt(4).Image" alt="">
         </div>
     </div>
 </section>
@@ -17,19 +17,14 @@
             <div>
                 <section class="slider-text-area">
                     <div class="slider-text">
-                        <h5 data-aos="fade-down">IF MUSIC BE THE FOOD OF LOVE PLAY ON</h5>
-                        <h2 data-aos="fade-down">Iboşun retoranı</h2>
+                        <h5 data-aos="fade-down">@Model.Slides.ElementAt(4).Saw</h5>
+                        <h2 data-aos="fade-down">@Model.Slides.ElementAt(4).RestaurantName</h2>
                         <div class="text-area col-sm-12" data-aos="fade-down">
                             <p>
-                                Food, in the end, in our own tradition, is something holy. It's not about nutrients
-                                and
-                                calories.
-                                <div class="text-area-center">
-                                    It's about sharing. It's about honesty. It's about identity.
-                                </div>
+                                @Model.Slides.ElementAt(4).Description
                             </p>
                         </div>
-                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                        <a asp-action="Index" asp-controller="Menu" class="btn button" data-aos="fade-down">View menu</a>
                     </div>
                 </section>
             </div>
@@ -41,7 +36,7 @@
     <div class="container content">
         <div class="row">
             <div class="col-md-6 img-side">
-                 <img style="width:100%; height:100%" src="~/../photos/Menu-photo/image-31.jpg" alt=""> 
+                <img style="width:100%; height:100%; border-radius:20px; " src="~/../photos/Menu-photo/image-31.jpg" alt="">
             </div>
             <div class="col-md-6 order-side">
                 <div class="food-name">

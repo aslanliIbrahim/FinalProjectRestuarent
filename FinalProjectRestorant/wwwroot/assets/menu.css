@@ -286,11 +286,26 @@ header .container nav .nav-list li:hover > .menu-table {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
+    display:none;
   }
   .slider-text-area .slider-text {
     max-width: 81%;
     left: 16%;
+    display:none; 
   }
+    .slider-text-area .slider-text h5{
+        display:none;
+    }
+    .slider-text-area .slider-text h2 {
+        display: none;
+    }
+    
+    .slider-text-area .slider-text text-area p{
+        display: none;
+    }
+    .slider-text-area .slider-text text-area a{
+        display:none;
+    }
 }
 
 .slider-text-area .slider-text {

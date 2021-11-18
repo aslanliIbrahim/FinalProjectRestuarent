@@ -22,12 +22,12 @@ namespace FinalProjectRestorant.Controllers
             OrderVM orderVM = new OrderVM
             {
                 Slides =await _context.Slides.ToListAsync(),
-                SteakBigMenus =await _context.SteakBigMenus.ToListAsync(),
-                BreakFasts = await _context.breakFasts.ToListAsync(),
-                Pizzas = await _context.Pizzas.ToListAsync(),
-                Starters = await _context.starters.ToListAsync(),
-                Desserts = await _context.desserts.ToListAsync(),
-                Drinks = await _context.drinks.ToListAsync(),
+                SteakBigMenus =await _context.SteakBigMenus.FirstOrDefaultAsync(),
+                BreakFasts = await _context.breakFasts.FirstOrDefaultAsync(),
+                Pizzas = await _context.Pizzas.FirstOrDefaultAsync(),
+                Starters = await _context.starters.FirstOrDefaultAsync(),
+                Desserts = await _context.desserts.FirstOrDefaultAsync(),
+                Drinks = await _context.drinks.FirstOrDefaultAsync(),
             };
             return View(orderVM);
         }
@@ -63,7 +63,7 @@ namespace FinalProjectRestorant.Controllers
             {
                 Image = steakBig.Image,
                 NameOfFood = steakBig.BigMenuFoodName,
-                Price = steakBig.Price
+                Price = Convert.ToDouble(Request.Form["AllPrice"])
             };
             _context.AdminOrders.Add(adminOrder);
             await _context.SaveChangesAsync();

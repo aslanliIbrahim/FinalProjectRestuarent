@@ -11,29 +11,31 @@
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-window-close"></i>
             </div>
-            <a href="#" class="logo">
+            <a asp-action="Index" asp-controller="Home" class="logo">
                 <i class="fas @Model.Eogo"></i>
             </a>
             <ul class="nav-list">
                 <li>
-                    <a href="#">Home</a>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
                 </li>
                 <li>
-                    <a href="#">Menu</a>
+                    <a asp-action="Index" asp-controller="Menu">Menu</a>
                     <ul class="menu-table">
-                        <li><a href="#">Dinner</a></li>
-                        <li><a href="#">Hot Meals</a></li>
-                        <li><a href="#">Cold Meals</a></li>
-                        <li><a href="#">Drinks</a></li>
+                        <li><a asp-action="Index" asp-controller="SteakBigMenu">Meat</a></li>
+                        <li><a asp-action="Index" asp-controller="BreakFast">BreakFast</a></li>
+                        <li><a asp-action="Index" asp-controller="PizzaMenu">Pizza</a></li>
+                        <li><a asp-action="Index" asp-controller="Starters">FishFood</a></li>
+                        <li><a asp-action="Index" asp-controller="Desserts">Desserts</a></li>
+                        <li><a asp-action="Index" asp-controller="Drinks">Drinks</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Reservation</a>
+                    <a asp-action="Index" asp-controller="Reservation">Reservation</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a asp-action="Index" asp-controller="Order">Services</a>
                     <ul class="menu-table">
-                        <li><a href="#">Order</a></li>
+                        <li><a asp-action="Index" asp-controller="Order">Order</a></li>
 
                     </ul>
                 </li>

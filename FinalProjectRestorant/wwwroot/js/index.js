@@ -10,15 +10,15 @@ selectElement = ('.menu-icons'), addEventListener('click', ()=>{
 })
 //end hamburger menu
 
-document.onscroll=function(e){
-    if(document.documentElement.scrollTop > 100)
-    {
-        document.querySelector('header').classList.add("stick");
-    }else{
-        document.querySelector('header').classList.remove("stick");
-    }
-    // else 
-    // {
-    //     (".navbar").removeClass(".stick");
-    // }
-}
+//document.onscroll=function(e){
+//    if(document.documentElement.scrollTop > 100)
+//    {
+//        document.querySelector('header').classList.add("stick");
+//    }else{
+//        document.querySelector('header').classList.remove("stick");
+//    }
+//    // else 
+//    // {
+//    //     (".navbar").removeClass(".stick");
+//    // }
+//}

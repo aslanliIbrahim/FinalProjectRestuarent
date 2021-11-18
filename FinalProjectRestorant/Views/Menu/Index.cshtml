@@ -36,14 +36,14 @@
 <section class="menu">
     <div class="container content">
         <div class="row">
-            <div class="col-md-4 menu-card">
+            <div class="col-md-4 menu-card" style="margin-bottom:20px;">
                 <a asp-action="Index" asp-controller="SteakBigMenu">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(0).Image" alt="">
 
                     <h2>@Model.menus.ElementAt(0).FoodName</h2>
                 </a>
             </div>
-            <div class="col-md-4 menu-card">
+            <div class="col-md-4 menu-card" style="margin-bottom:20px;">
                 <a asp-action="Index" asp-controller="BreakFast">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(1).Image" alt="">
 
@@ -62,7 +62,7 @@
         </div>
         <br><br>
         <div class="row">
-            <div class="col-md-4 menu-card">
+            <div class="col-md-4 menu-card" style="margin-bottom:20px;">
                 <a asp-action="Index" asp-controller="Starters">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(3).Image" alt="">
 
@@ -70,7 +70,7 @@
 
                 </a>
             </div>
-            <div class="col-md-4 menu-card">
+            <div class="col-md-4 menu-card" style="margin-bottom:20px;">
                 <a asp-action="Index" asp-controller="Desserts">
                     <img src="../photos/Menu-photo/@Model.menus.ElementAt(4).Image" alt="">
 

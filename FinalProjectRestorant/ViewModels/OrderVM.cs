@@ -9,12 +9,12 @@ namespace FinalProjectRestorant.ViewModels
     public class OrderVM
     {
         public List<Slides> Slides { get; set; }
-        public List<SteakBigMenu> SteakBigMenus { get; set; }
-        public List<BreakFast> BreakFasts { get; set; }
-        public  List<Pizza> Pizzas { get; set; }
-        public List<Starters> Starters { get; set; }
-        public List<Desserts> Desserts { get; set; }
-        public List<Drinks> Drinks { get; set; }
+        public SteakBigMenu SteakBigMenus { get; set; }
+        public BreakFast BreakFasts { get; set; }
+        public  Pizza Pizzas { get; set; }
+        public Starters Starters { get; set; }
+        public Desserts Desserts { get; set; }
+        public Drinks Drinks { get; set; }
         public SteakBigMenu Order { get; set; }
         public AdminOrder AdminOrders { get; set; }
         public string Image { get; set; }

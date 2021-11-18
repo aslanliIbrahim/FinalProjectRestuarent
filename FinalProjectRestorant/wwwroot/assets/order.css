@@ -292,7 +292,7 @@ header .container nav .nav-list li:hover > .menu-table {
 
 .general-order-side .row .img-side {
   /*background: url("../photos/Menu-photo/image-31.jpg");*/
-  width: 20%;
+  
   height: 400px;
   background-position: center;
   border-radius: 15px;

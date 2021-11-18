@@ -12,8 +12,8 @@ header {
   top: 0;
   left: 0;
   z-index: 0;
-  background: url("./../photos/about-photo/bg-15.jpg");
-  height: 600px;
+  background: url("~/../photos/Our-chef-photo/bg-15.jpg");
+  height: 600px;        
 }
 
 header.stick {
