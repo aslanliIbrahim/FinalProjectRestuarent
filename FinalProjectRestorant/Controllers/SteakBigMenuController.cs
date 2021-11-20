@@ -85,7 +85,7 @@ namespace FinalProjectRestorant.Controllers
             _context.AdminOrders.Add(adminOrder);
             await _context.SaveChangesAsync();
             //Home sehifeye qayidacag burani fix edersen sonra;
-            return RedirectToAction("Index", "Menu");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
