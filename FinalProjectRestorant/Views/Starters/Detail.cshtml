@@ -1,0 +1,78 @@
+﻿@model Starters
+@{
+    ViewData["Title"] = "SteakDetail";
+    List<Slides> slides = ViewBag.Slides;
+}
+<section class="showcase">
+    <div class="video-container">
+        <div class="video">
+            <img src="~/../photos/Our-chef-photo/@slides.ElementAt(4).Image" alt="">
+        </div>
+    </div>
+</section>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+            <div>
+                <section class="slider-text-area">
+                    <div class="slider-text">
+                        <h5 data-aos="fade-down">@slides.ElementAt(4).Saw</h5>
+                        <h2 data-aos="fade-down">@slides.ElementAt(4).RestaurantName</h2>
+                        <div class="text-area col-sm-12" data-aos="fade-down">
+                            <p>
+                                @slides.ElementAt(4).Description
+                            </p>
+                        </div>
+                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="general-order-side">
+    <div class="container content">
+        <div class="row">
+            <form method="post" enctype="multipart/form-data">
+                <div class=" img-side" style="width: 100%; display:flex; align-items:center; justify-content:center;">
+                    <img style="height:100%" src="~/photos/Menu-photo/@Model.Image" alt="">
+                </div>
+                <div class=" order-side">
+                    <div class="food-name">
+                        <h2>@Model.BigMenuFoodName</h2>
+                    </div>
+                    <div class="order">
+
+                        <i class="fas fa-minus-circle"></i>
+
+                        <p class="count">1</p>
+
+                        <i class="fas fa-plus-circle"></i>
+
+                    </div>
+                    <div class="food-price">
+                        <p>Food price</p>
+                        <input asp-for="Price" style="border:none; padding-left:22%;" class="food-price-count" />
+
+                    </div>
+                    <div class="all-price">
+                        <p>All Price</p>
+                        <input style="border:none; padding-left:24%; font-size:30px;" class="all-price-count" name="AllPrice" value="@Model.Price" />
+
+                        <button type="submit" class="button">
+                            Confirm
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</section>
+
+
+

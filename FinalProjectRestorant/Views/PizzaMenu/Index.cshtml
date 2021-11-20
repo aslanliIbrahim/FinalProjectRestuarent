@@ -50,7 +50,7 @@
             {
                 <div class="col-md-4 big-menu-card">
                     <div class="img-box">
-                        <a href="">
+                        <a asp-action="Detail" asp-route-id="@bt.Id">
                             <img src="../photos/Menu-photo/@bt.Image" alt="">
                         </a>
                         <div class="price">
@@ -74,7 +74,25 @@
 
             <br /><br />
         </div>
+        <div class="row">
+            <nav class="d-flex justify-content-center">
+                <ul class="pagination">
+                    <li class="page-item  @(ViewBag.ActivePage==1?"disabled":"")">
+                        <a class="page-link" asp-route-page="@(ViewBag.ActivePage==1?ViewBag.pageCount:ViewBag.ActivePage+1)">Previous</a>
+                    </li>
+                    @for (int i = 1; i <= ViewBag.pageCount; i++)
+                    {
 
+                        <li class="page-item @(ViewBag.ActivePage == i ? "active":"")">
+                            <a class="page-link" asp-action="Index" asp-controller="PizzaMenu" asp-route-page="@i">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(ViewBag.ActivePage==ViewBag.pageCount?"disabled":"")">
+                        <a class="page-link" asp-action="Index" asp-controller="PizzaMenu" asp-route-page="@(ViewBag.ActivePage==ViewBag.pageCount?ViewBag.pageCount:ViewBag.ActivePage+1)">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </section>
 

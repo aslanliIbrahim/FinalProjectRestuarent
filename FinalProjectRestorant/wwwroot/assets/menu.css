@@ -300,11 +300,11 @@ header .container nav .nav-list li:hover > .menu-table {
         display: none;
     }
     
-    .slider-text-area .slider-text text-area p{
-        display: none;
+    .slider-text-area .slider-text .text-area p{
+        display:none !important;
     }
-    .slider-text-area .slider-text text-area a{
-        display:none;
+    .slider-text-area .slider-text a{
+        display:none !important;
     }
 }
 
@@ -371,6 +371,9 @@ header .container nav .nav-list li:hover > .menu-table {
 
 .menu .menu-card {
   overflow: hidden;
+  /*border:2px solid black;*/
+  padding-top:0px;
+  padding-bottom:0px;
 }
 
 .menu .menu-card a {
