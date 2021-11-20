@@ -38,5 +38,54 @@ namespace FinalProjectRestorant.Controllers
             };
             return View(steakBigMenu);
         }
+
+        public async Task<IActionResult> Detail(int? id)
+        {
+            var slides = await _context.Slides.ToListAsync();
+            ViewBag.Slides = slides;
+
+            var order = await _context.SteakBigMenus.FirstOrDefaultAsync(p => p.Id == id);
+            if (order == null)
+                return NotFound();
+
+            //OrderVM orders = new OrderVM
+            //{
+            //    Slides = _context.Slides.ToList(),
+            //    Order = await _context.SteakBigMenus.FirstOrDefaultAsync(p => p.Id == id),
+
+            //};
+            //if (orders.Order == null)
+            //    return NotFound();
+
+
+            return View(order);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Detail(SteakBigMenu steakBig,int? id, string allPrice, string count)
+        {
+            if (id is null)
+                return BadRequest();
+
+            var slides = await _context.Slides.ToListAsync();
+            ViewBag.Slides = slides;
+
+            var dbSteakBigMenu = await _context.SteakBigMenus.FirstOrDefaultAsync(p => p.Id == id);
+            if (dbSteakBigMenu == null)
+                return NotFound();
+
+            AdminOrder adminOrder = new AdminOrder
+            {
+                Image = dbSteakBigMenu.Image,
+                NameOfFood = dbSteakBigMenu.BigMenuFoodName,
+                Price = Convert.ToDouble(allPrice),
+                Count = Convert.ToInt32(count)
+            };
+            _context.AdminOrders.Add(adminOrder);
+            await _context.SaveChangesAsync();
+            //Home sehifeye qayidacag burani fix edersen sonra;
+            return RedirectToAction("Index", "Menu");
+        }
     }
 }

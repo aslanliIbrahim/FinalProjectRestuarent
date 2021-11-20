@@ -807,6 +807,7 @@ header .container nav .nav-list li:hover > .menu-table {
   background-color: #f7f7f7;
   padding-top: 80px;
   padding-bottom: 80px;
+  margin-bottom:0px;
 }
 
 @media all and (max-width: 850px) {
@@ -816,7 +817,7 @@ header .container nav .nav-list li:hover > .menu-table {
     padding-bottom: 80px;
     position: relative;
     z-index: 1;
-    margin-bottom: 400px;
+   margin-bottom:400px;
   }
 }
 
@@ -831,11 +832,9 @@ header .container nav .nav-list li:hover > .menu-table {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-direction: column;
+  flex-direction: column;
+ 
 }
 
 .our-chef .chefs-about .chef-up {

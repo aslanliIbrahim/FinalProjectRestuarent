@@ -20,7 +20,7 @@ header {
   z-index: 10;
   .show {
     width: 100%;
-    background-color: red;
+    background-color: red
   }
   .container {
     width: 100%;
@@ -706,10 +706,11 @@ header {
 }
 
 .our-chef {
-  // border: 5px solid black;
+   /*border: 5px solid black;*/
   background-color: $Lynx-White;
   padding-top: 80px;
   padding-bottom: 80px;
+  margin-bottom:0px;
   @media all and (max-width:850px) {
     &{
       background-color: white;

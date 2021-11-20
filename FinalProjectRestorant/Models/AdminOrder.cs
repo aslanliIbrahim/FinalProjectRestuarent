@@ -11,5 +11,6 @@ namespace FinalProjectRestorant.Models
         public double Price { get; set; }
         public string NameOfFood { get; set; }
         public string Image { get; set; }
+        public int Count { get; set; }
     }
 }

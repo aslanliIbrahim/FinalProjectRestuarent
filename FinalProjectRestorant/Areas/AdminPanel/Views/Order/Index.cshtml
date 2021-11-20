@@ -33,13 +33,12 @@
                                 <thead>
                                     <tr>
 
-                                        <th>Slides side</th>
+
                                         <th>Image</th>
-                                        <th>Food Name</th>
-                                        <th>Service</th>
-                                        <th>Pieces</th>
                                         <th>Price</th>
-                                        <th>Change or Delete</th>
+                                        <th>Food Name</th>
+                                        <th>Pieces</th>
+                                        
 
 
                                     </tr>
@@ -48,37 +47,39 @@
                                 <tbody>
                                     @foreach (var st in Model)
                                     {
-                                        <tr class="w-25">
-                                            <td>
-                                                @count
-                                            </td>
-                                            <td>
-                                                <img src="~/photos/Menu-photo/@st.Image" width="300px" />
-                                            </td>
-                                            <td>
-                                                @st.Price
-                                            </td>
+                                    <tr class="w-25">
+                                        <td>
+                                            @count
+                                        </td>
+                                        <td>
+                                            <img src="~/photos/Menu-photo/@st.Image" width="300px" />
+                                        </td>
+                                        <td>
+                                            @st.Price
+                                        </td>
 
-                                            <td>
-                                                @st.NameOfFood
-                                            </td>
-                                            
+                                        <td>
+                                            @st.NameOfFood
+                                        </td>
+                                        <td>
+                                            @st.Count
+                                        </td>
 
-                                            <td>
-                                                <a asp-action="Update" asp-route-id="@st." class="btn btn-primary">
-                                                    <i class="fas fa-wrench"></i>
+                                        <td>
+                                            <a asp-action="Update" asp-route-id="@st." class="btn btn-primary">
+                                                <i class="fas fa-wrench"></i>
+                                            </a>
+                                            @if (count > 1)
+                                            {
+
+                                                <a asp-action="Delete" asp-route-id="@st." class="btn btn-danger">
+                                                    <i class="far fa-trash-alt"></i>
                                                 </a>
-                                                @if (count > 1)
-                                                {
 
-                                                    <a asp-action="Delete" asp-route-id="@st." class="btn btn-danger">
-                                                        <i class="far fa-trash-alt"></i>
-                                                    </a>
+                                            }
 
-                                                }
-
-                                            </td>
-                                        </tr>
+                                        </td>
+                                    </tr>
                                         count++;
                                     }
 
