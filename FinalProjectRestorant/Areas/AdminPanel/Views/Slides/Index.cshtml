@@ -50,7 +50,15 @@
                                                 @count
                                             </td>
                                             <td>
+                                                @if (slides.Image.Contains(".mp4"))
+                                                {
+                                                    <video src="~/photos/Our-chef-photo/@slides.Image" width="300px"></video>
+                                                }
+                                                else
+                                                {
                                                 <img src="~/photos/Our-chef-photo/@slides.Image" width="300px" />
+                                                }
+
                                             </td>
                                             <td>
                                                 @slides.RestaurantName

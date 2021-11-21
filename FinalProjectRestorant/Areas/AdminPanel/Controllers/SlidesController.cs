@@ -45,7 +45,7 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
                 ModelState.AddModelError("Photo", "Please enter image format");
                 return View();
             }
-            if (slide.Photo.Length / 1024 > 500)
+            if (slide.Photo.Length / 5000 > 500)
             {
                 ModelState.AddModelError("Photo", "image size must be less 500kb");
                 return View();

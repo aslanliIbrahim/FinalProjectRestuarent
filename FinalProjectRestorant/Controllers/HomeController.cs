@@ -1,4 +1,6 @@
-﻿using FinalProjectRestorant.Models;
+﻿using FinalProjectRestorant.DAL;
+using FinalProjectRestorant.Models;
+using FinalProjectRestorant.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,9 +13,20 @@ namespace FinalProjectRestorant.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly AppDbContext _context;
+        public HomeController(AppDbContext context)
         {
-            return View();
+            _context = context;
+        }
+        public async Task<IActionResult> Index()
+        {
+            HomeVM homeVM = new HomeVM
+            {
+                Slides = _context.Slides.ToList(),
+                Abouts = _context.Abouts.ToList()
+            };
+
+            return View(homeVM);
         }
     }
 }

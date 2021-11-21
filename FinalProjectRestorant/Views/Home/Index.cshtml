@@ -1,4 +1,4 @@
-﻿
+﻿@model HomeVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -6,7 +6,7 @@
 <section class="showcase">
     <div class="video-container">
         <div class="video">
-            <video autoplay loop muted src="../videos/WhatsApp Video 2021-10-17 at 16.27.37.mp4"></video>
+            <video autoplay loop muted src="../photos/Our-chef-photo/@Model.Slides.ElementAt(5).Image"></video>
         </div>
     </div>
 </section>
@@ -18,16 +18,11 @@
             <div>
                 <section class="slider-text-area">
                     <div class="slider-text">
-                        <h5 data-aos="fade-down">IF MUSIC BE THE FOOD OF LOVE PLAY ON</h5>
-                        <h2 data-aos="fade-down">Qazelle</h2>
+                        <h5 data-aos="fade-down">@Model.Slides.ElementAt(5).Saw</h5>
+                        <h2 data-aos="fade-down">@Model.Slides.ElementAt(5).RestaurantName</h2>
                         <div class="text-area col-sm-12" data-aos="fade-down">
                             <p>
-                                Food, in the end, in our own tradition, is something holy. It's not about nutrients
-                                and
-                                calories.
-                                <div class="text-area-center">
-                                    It's about sharing. It's about honesty. It's about identity.
-                                </div>
+                                @Model.Slides.ElementAt(5).Description
                             </p>
                         </div>
                         <a href="#" class="btn button" data-aos="fade-down">View menu</a>
@@ -54,11 +49,7 @@
                 </div>
                 <div class="text-left-story">
                     <p>
-                        Tincidunt integer eu augue augue nunc elit dolor luctus placerat scelerisque euismod iaculis
-                        eu lacus nunc mi elit vehicula ut laoreet acaliquam sit amet justo nunc tempor metus vel.
-                        Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunt
-                        utlabore et dolore magna aliqua. Utenim ad minim veniam quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        @Model.Abouts.ElementAt(0).Description
                     </p>
                 </div>
                 <div class="text-left-img">
@@ -140,7 +131,7 @@
     </div>
 </section>
 
-<section class="fast-reservation">
+@*<section class="fast-reservation">
     <div class="container content">
         <div class="row">
             <div class="col-md-4 reservation-left">
@@ -220,7 +211,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>*@
 
 <section class="fast-menu">
     <div class="container content">
