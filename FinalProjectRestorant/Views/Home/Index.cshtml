@@ -91,93 +91,11 @@
 
             }
 
-
-
         </div>
     </div>
 </section>
 
-@*<section class="fast-reservation">
-    <div class="container content">
-        <div class="row">
-            <div class="col-md-4 reservation-left">
-                <p>A table only for you</p>
-                <div class="reservation-left-down">
-                    <h2>
-                        Book A Table
-                    </h2>
-                </div>
-            </div>
-            <div class="col-md-8 reservation-right">
-                <div class="col-sm-4 general-fast-reservation">
-                    <label for="number-of-people"><i class="fas fa-user-alt"></i></label>
-                    <select name="person" id="number-of-people" class="number-people">
-                        <option value="">2 person</option>
-                        <option value="">3 person</option>
-                        <option value="">4 person</option>
-                        <option value="">5 person</option>
-                        <option value="">6 person</option>
-                        <option value="">7 person</option>
-                        <option value="">8 person</option>
-                        <option value="">9 person</option>
-                        <option value="">10 person</option>
-                        <option value="">11 person</option>
-                        <option value="">12 person</option>
-                        <option value="">13 person</option>
-                        <option value="">14 person</option>
-                        <option value="">15 person</option>
-                        <option value="">16 person</option>
-                        <option value="">17 person</option>
-                        <option value="">18 person</option>
-                        <option value="">19 person</option>
-                        <option value="">20 person</option>
-                        <option value="">Larger party</option>
-                    </select>
-                </div>
-                <div class="col-sm-4 general-fast-reservation">
-                    <label for="date-time"><i class="fas fa-clock"></i></label>
-                    <select name="time-date" id="date-time" class="number-people">
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
-                        <option value="">7:30 AM</option>
 
-                    </select>
-                </div>
-                <div class="col-sm-4 general-fast-reservation">
-
-                    <i class="fas fa-clock"></i>
-                    <input type="date" class="number-people">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>*@
 
 <section class="fast-menu">
     <div class="container content">
@@ -197,130 +115,88 @@
             <div class="col-md-5 menu-left">
                 <div class="list-items">
                     <div class="list-item">
-                        <div class="row">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        @foreach (var st in Model.SteakBigMenus.Take(3))
+                        {
+                            <div class="row">
+                                <div class="col-md-9 for-hover">
+                                    <h3>@st.BigMenuFoodName</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </div>
+                                <div class="col-md-3 price">
+                                    <span>@st.Price$</span>
+                                </div>
+                                <hr>
                             </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
-                        </div>
+                        }
                     </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    @foreach (var br in Model.BreakFasts.Take(2))
+	                 {
+                        <div class="list-item">
+                             <div class="row ">
+                                 <div class="col-md-9 for-hover">
+                                    <h3>@br.BigMenuFoodName</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </div>
+                                <div class="col-md-3 price">
+                                    <span>@br.Price$</span>
+                                </div>
+                                <hr>
                             </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
                         </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
+	                 }
                 </div>
             </div>
 
             <div class="col-md-5 menu-left">
+
                 <div class="list-items">
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    @foreach (var pz in Model.Pizzas.Take(2))
+                    {
+                        <div class="list-item">
+                            <div class="row ">
+                                <div class="col-md-9 for-hover">
+                                    <h3>@pz.BigMenuFoodName</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </div>
+                                <div class="col-md-3 price">
+                                    <span>@pz.Price$</span>
+                                </div>
+                                <hr>
                             </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
                         </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    }
+                    @foreach (var st in Model.Starters.Take(3))
+                    {
+                        <div class="list-item">
+                            <div class="row ">
+                                <div class="col-md-9 for-hover">
+                                    <h3>@st.BigMenuFoodName</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </div>
+                                <div class="col-md-3 price">
+                                    <span>@st.Price$</span>
+                                </div>
+                                <hr>
                             </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
                         </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    }
+
+                    @*@foreach (var dr in Model.Drinks.Take(1))
+                    {
+                        <div class="list-item">
+                            <div class="row ">
+                                <div class="col-md-9 for-hover">
+                                    <h3>@dr.BigMenuFoodName</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </div>
+                                <div class="col-md-3 price">
+                                    <span>@dr.Price$</span>
+                                </div>
+                                <hr>
                             </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
                         </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="list-item">
-                        <div class="row ">
-                            <div class="col-md-9 for-hover">
-                                <h3>Pizza Margherita</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            </div>
-                            <div class="col-md-3 price">
-                                <span>15$</span>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
+
+                    }*@
                 </div>
             </div>
         </div>
@@ -333,167 +209,36 @@
 <section class="offer">
     <div class="container content">
         <div class="row">
+            @foreach (var hm in Model.HomeCards.Skip(4).Take(6))
+            {
 
-            <div class="col-md-4">
-                <div class="icon-img">
-                    <a href="" class="img-offer">
-                        <img src="../photos/Home-photo/offer-image-1.jpg" alt="">
-                    </a>
-                    <div class="card-about">
-                        <div class="type-of-food">
-                            <p>Dolomiti</p>
-                        </div>
-                        <div class="food-about-up">
-                            <h3>
-                                <a href="">
-                                    Rice with wild boar liver and cutted cheese from Texas
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="food-about-down">
-                            <p>
-                                Interdum iusto pulvinar consequuntur augue optio repellat fugaurus expedita fusce
-                                temporibus malesio.
-                            </p>
+
+                <div class="col-md-4" style="margin-bottom:30px;">
+                    <div class="icon-img">
+                        <a href="" class="img-offer">
+                            <img src="../photos/Home-photo/@hm.Image" alt="">
+                        </a>
+                        <div class="card-about">
+                            <div class="type-of-food">
+                                <p>@hm.TypeOfFood</p>
+                            </div>
+                            <div class="food-about-up">
+                                <h3>
+                                    <a href="">
+                                        @hm.Description
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="food-about-down">
+                                <p>
+                                    @hm.Description
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="icon-img">
-                    <a href="" class="img-offer">
-                        <img src="../photos/Home-photo/offer-image-2.jpg" alt="">
-                    </a>
-                    <div class="card-about">
-                        <div class="type-of-food">
-                            <p>Dolomiti</p>
-                        </div>
-                        <div class="food-about-up">
-                            <h3>
-                                <a href="">
-                                    Rice with wild boar liver and cutted cheese from Texas
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="food-about-down">
-                            <p>
-                                Interdum iusto pulvinar consequuntur augue optio repellat fugaurus expedita fusce
-                                temporibus malesio.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="icon-img">
-                    <a href="" class="img-offer">
-                        <img src="../photos/Home-photo/offer-image-3.jpg" alt="">
-                    </a>
-                    <div class="card-about">
-                        <div class="type-of-food">
-                            <p>Dolomiti</p>
-                        </div>
-                        <div class="food-about-up">
-                            <h3>
-                                <a href="">
-                                    Rice with wild boar liver and cutted cheese from Texas
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="food-about-down">
-                            <p>
-                                Interdum iusto pulvinar consequuntur augue optio repellat fugaurus expedita fusce
-                                temporibus malesio.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <br>
-        <div class="row">
-
-            <div class="col-md-4">
-                <div class="icon-img">
-                    <a href="" class="img-offer">
-                        <img src="../photos/Home-photo/offer-image-4.jpg" alt="">
-                    </a>
-                    <div class="card-about">
-                        <div class="type-of-food">
-                            <p>Dolomiti</p>
-                        </div>
-                        <div class="food-about-up">
-                            <h3>
-                                <a href="">
-                                    Rice with wild boar liver and cutted cheese from Texas
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="food-about-down">
-                            <p>
-                                Interdum iusto pulvinar consequuntur augue optio repellat fugaurus expedita fusce
-                                temporibus malesio.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="icon-img">
-                    <a href="" class="img-offer">
-                        <img src="../photos/Home-photo/offer-image-5.jpg" alt="">
-                    </a>
-                    <div class="card-about">
-                        <div class="type-of-food">
-                            <p>Dolomiti</p>
-                        </div>
-                        <div class="food-about-up">
-                            <h3>
-                                <a href="">
-                                    Rice with wild boar liver and cutted cheese from Texas
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="food-about-down">
-                            <p>
-                                Interdum iusto pulvinar consequuntur augue optio repellat fugaurus expedita fusce
-                                temporibus malesio.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="icon-img">
-                    <a href="" class="img-offer">
-                        <img src="../photos/Home-photo/offer-image-6.jpg" alt="">
-                    </a>
-                    <div class="card-about">
-                        <div class="type-of-food">
-                            <p>Dolomiti</p>
-                        </div>
-                        <div class="food-about-up">
-                            <h3>
-                                <a href="">
-                                    Rice with wild boar liver and cutted cheese from Texas
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="food-about-down">
-                            <p>
-                                Interdum iusto pulvinar consequuntur augue optio repellat fugaurus expedita fusce
-                                temporibus malesio.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                
+            }
         </div>
     </div>
 </section>

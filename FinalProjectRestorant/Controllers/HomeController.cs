@@ -2,6 +2,7 @@
 using FinalProjectRestorant.Models;
 using FinalProjectRestorant.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,11 @@ namespace FinalProjectRestorant.Controllers
             {
                 Slides = _context.Slides.ToList(),
                 Abouts = _context.Abouts.ToList(),
-                HomeCards = _context.HomeCards.ToList()
+                HomeCards = _context.HomeCards.ToList(),
+                SteakBigMenus =await _context.SteakBigMenus.ToListAsync(),
+                BreakFasts = _context.breakFasts.ToList(),
+                Pizzas = _context.Pizzas.ToList(),
+                Starters = _context.starters.ToList()
             };
             
             return View(homeVM);

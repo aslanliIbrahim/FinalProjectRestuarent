@@ -23,12 +23,19 @@ namespace FinalProjectRestorant.Controllers
             decimal b = Math.Ceiling(_context.SteakBigMenus.Count() / pageItemCount);
             ViewBag.pageCount =Convert.ToInt32(b);
             ViewBag.ActivePage = page;
-
-
+            if (page < 0)
+                return NotFound();
+            
+           
+            
             List<SteakBigMenu> steakBigMenus = await _context.SteakBigMenus.OrderBy(st=>st.Id)
                                                                            .Skip((page - 1) * (int)pageItemCount)
                                                                            .Take((int)pageItemCount)
                                                                            .ToListAsync();
+            if (steakBigMenus is null)
+                return NotFound();
+            
+            
 
 
             SteakBigMenuVM steakBigMenu = new SteakBigMenuVM

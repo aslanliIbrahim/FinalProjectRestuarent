@@ -724,6 +724,7 @@ header .container nav .nav-list li:hover > .menu-table {
   overflow: hidden;
   -webkit-transition: 1s;
   transition: 1s;
+  margin-bottom:10px;
 }
 
 .offer .icon-img:hover {
@@ -760,6 +761,7 @@ header .container nav .nav-list li:hover > .menu-table {
   background-color: black;
   color: white;
   margin-bottom: 6%;
+  text-transform:uppercase;
 }
 
 .offer .icon-img .card-about .type-of-food p {
