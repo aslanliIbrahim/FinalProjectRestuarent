@@ -23,9 +23,10 @@ namespace FinalProjectRestorant.Controllers
             HomeVM homeVM = new HomeVM
             {
                 Slides = _context.Slides.ToList(),
-                Abouts = _context.Abouts.ToList()
+                Abouts = _context.Abouts.ToList(),
+                HomeCards = _context.HomeCards.ToList()
             };
-
+            
             return View(homeVM);
         }
     }

@@ -10,5 +10,6 @@ namespace FinalProjectRestorant.ViewModels
     {
         public List<Slides> Slides { get; set; }
         public List<About> Abouts { get; set; }
+        public List<HomeCard> HomeCards { get; set; }
     }
 }

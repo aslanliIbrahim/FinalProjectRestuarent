@@ -71,62 +71,28 @@
 <section class="menu-card">
     <div class="container content">
         <div class="row">
-            <div class="col-md-3 card-of-menu">
-                <div class="general-card">
-                    <div class="menu-img">
-                        <img src="../photos/Home-photo/long-1.jpg" alt="">
+            @foreach (var hm in Model.HomeCards.Take(4))
+            {
+               
+                    <div class="col-md-3 card-of-menu">
+                        <div class="general-card">
+                            <div class="menu-img">
+                                <img src="../photos/Home-photo/@hm.Image" alt="">
+                            </div>
+                            <a asp-action="Index" asp-controller="Menu" class="menu-text">
+                                <h2 class="visible">@hm.Title</h2>
+                                <hr class="line">
+                                <p class="on-visible-hover">
+                                    @hm.Description
+                                </p>
+                            </a>
+                        </div>
                     </div>
-                    <a class="menu-text">
-                        <h2 href="#" class="visible">Eat</h2>
-                        <hr class="line">
-                        <p class="on-visible-hover">
-                            An explosion of flavours
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 card-of-menu">
-                <div class="general-card">
-                    <div class="menu-img">
-                        <img src="../photos/Home-photo/long-2.jpg" alt="">
-                    </div>
-                    <a class="menu-text">
-                        <h2 href="#" class="visible">Eat</h2>
-                        <hr class="line">
-                        <p class="on-visible-hover">
-                            An explosion of flavours
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 card-of-menu">
-                <div class="general-card">
-                    <div class="menu-img">
-                        <img src="../photos/Home-photo/long-3.jpg" alt="">
-                    </div>
-                    <a class="menu-text">
-                        <h2 href="#" class="visible">Eat</h2>
-                        <hr class="line">
-                        <p class="on-visible-hover">
-                            An explosion of flavours
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 card-of-menu">
-                <div class="general-card">
-                    <div class="menu-img">
-                        <img src="../photos/Home-photo/long-4.jpg" alt="">
-                    </div>
-                    <a class="menu-text">
-                        <h2 href="#" class="visible">Eat</h2>
-                        <hr class="line">
-                        <p class="on-visible-hover">
-                            An explosion of flavours
-                        </p>
-                    </a>
-                </div>
-            </div>
+
+            }
+
+
+
         </div>
     </div>
 </section>
