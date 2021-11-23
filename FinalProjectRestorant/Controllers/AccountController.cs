@@ -1,5 +1,6 @@
 ﻿using FinalProjectRestorant.Models;
 using FinalProjectRestorant.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -21,6 +22,7 @@ namespace FinalProjectRestorant.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+        
         public IActionResult Register()
         {
             return View();
@@ -56,6 +58,7 @@ namespace FinalProjectRestorant.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Login(LoginVM login)
         {
             if (!ModelState.IsValid) return View(login);
