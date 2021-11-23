@@ -79,7 +79,7 @@
                             <div class="menu-img">
                                 <img src="../photos/Home-photo/@hm.Image" alt="">
                             </div>
-                            <a asp-action="Index" asp-controller="Menu" class="menu-text">
+                            <a asp-action="Index" asp-controller="@hm.AspController" class="menu-text">
                                 <h2 class="visible">@hm.Title</h2>
                                 <hr class="line">
                                 <p class="on-visible-hover">
@@ -118,7 +118,7 @@
                         @foreach (var st in Model.SteakBigMenus.Take(3))
                         {
                             <div class="row">
-                                <div class="col-md-9 for-hover">
+                                <div class="col-md-9 for-hover"> 
                                     <h3>@st.BigMenuFoodName</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                 </div>
@@ -215,7 +215,7 @@
 
                 <div class="col-md-4" style="margin-bottom:30px;">
                     <div class="icon-img">
-                        <a href="" class="img-offer">
+                        <a asp-action="Index" asp-controller="@hm.AspController" class="img-offer">
                             <img src="../photos/Home-photo/@hm.Image" alt="">
                         </a>
                         <div class="card-about">

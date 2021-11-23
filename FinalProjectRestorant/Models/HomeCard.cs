@@ -20,5 +20,7 @@ namespace FinalProjectRestorant.Models
         public IFormFile Photo { get; set; }
         [Required,StringLength(maximumLength:500)]
         public string TypeOfFood { get; set; }
+        [Required]
+        public string AspController { get; set; }
     }
 }
