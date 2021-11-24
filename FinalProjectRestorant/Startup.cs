@@ -1,7 +1,9 @@
 using FinalProjectRestorant.DAL;
 using FinalProjectRestorant.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -49,11 +51,12 @@ namespace FinalProjectRestorant
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "areas",
-                    pattern: "{area:exists}/{controller=DashBoard}/{action=Index}/{id?}"
+                    pattern: "{area:exists}/{controller=AdminAccount}/{action=Login}/{id?}"
                 );
 
                 endpoints.MapControllerRoute

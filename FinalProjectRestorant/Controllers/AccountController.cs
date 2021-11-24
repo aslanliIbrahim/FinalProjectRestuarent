@@ -61,8 +61,8 @@ namespace FinalProjectRestorant.Controllers
         
         public async Task<IActionResult> Login(LoginVM login)
         {
-            if (!ModelState.IsValid) return View(login);
             AppUser user = await _userManager.FindByNameAsync(login.UserName);
+            if (!ModelState.IsValid) return View(login);
             if (user == null)
             {
                 ModelState.AddModelError("", "Username or password is incorrect");

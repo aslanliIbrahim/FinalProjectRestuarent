@@ -1,4 +1,5 @@
 ﻿using FinalProjectRestorant.DAL;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
 {
     [Area("AdminPanel")]
+    [Authorize(Roles = "Admin")]
     public class OrderController : Controller
     {
         public AppDbContext _context { get; }
