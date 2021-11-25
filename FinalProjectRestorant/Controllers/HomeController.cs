@@ -29,7 +29,8 @@ namespace FinalProjectRestorant.Controllers
                 SteakBigMenus =await _context.SteakBigMenus.ToListAsync(),
                 BreakFasts = _context.breakFasts.ToList(),
                 Pizzas = _context.Pizzas.ToList(),
-                Starters = _context.starters.ToList()
+                Starters = _context.starters.ToList(),
+                OpenTimes = _context.OpenTimes.ToList()
             };
             
             return View(homeVM);

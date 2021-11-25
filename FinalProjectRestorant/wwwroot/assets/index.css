@@ -360,6 +360,11 @@ header .container nav .nav-list li:hover > .menu-table {
   padding-top: 80px;
   padding-bottom: 80px;
 }
+@media all and (max-width:855px){
+    .our-story{
+        margin-top:300px;
+    }
+}
 
 .our-story hr {
   margin-top: 40px;
@@ -633,6 +638,11 @@ header .container nav .nav-list li:hover > .menu-table {
   text-align: center;
   -webkit-transition: 1s;
   transition: 1s;
+}
+@media all and (max-width:855px){
+    .fast-menu .button-menu .fast-menu-button{
+        width:100%;
+    }
 }
 
 .fast-menu .button-menu .fast-menu-button:hover {

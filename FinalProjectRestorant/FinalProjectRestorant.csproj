@@ -21,6 +21,16 @@
     <Compile Remove="Migrations\20211106074924_updateslides.Designer.cs" />
     <Compile Remove="Migrations\20211106075104_updateslides.cs" />
     <Compile Remove="Migrations\20211106075104_updateslides.Designer.cs" />
+    <Compile Remove="Migrations\20211125085132_CreateOpenTimes.cs" />
+    <Compile Remove="Migrations\20211125085132_CreateOpenTimes.Designer.cs" />
+    <Compile Remove="Migrations\20211125085339_UpdateOpenTimes.cs" />
+    <Compile Remove="Migrations\20211125085339_UpdateOpenTimes.Designer.cs" />
+    <Compile Remove="Migrations\20211125092845_CreateOpenDaysAndOpenTimesTables.cs" />
+    <Compile Remove="Migrations\20211125092845_CreateOpenDaysAndOpenTimesTables.Designer.cs" />
+    <Compile Remove="Migrations\20211125093659_CreateOpenTimesAndOpenDaysTables.cs" />
+    <Compile Remove="Migrations\20211125093659_CreateOpenTimesAndOpenDaysTables.Designer.cs" />
+    <Compile Remove="Migrations\20211125102422_CreateTwoTablesAboutOpenTimes.cs" />
+    <Compile Remove="Migrations\20211125102422_CreateTwoTablesAboutOpenTimes.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

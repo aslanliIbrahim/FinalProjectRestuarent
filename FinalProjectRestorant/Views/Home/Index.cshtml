@@ -154,14 +154,16 @@
                     {
                         <div class="list-item">
                             <div class="row ">
-                                <div class="col-md-9 for-hover">
-                                    <h3>@pz.BigMenuFoodName</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                </div>
-                                <div class="col-md-3 price">
-                                    <span>@pz.Price$</span>
-                                </div>
-                                <hr>
+                                <a asp-action="Index" asp-controller="Pizza">
+                                    <div class="col-md-9 for-hover">
+                                        <h3>@pz.BigMenuFoodName</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                    </div>
+                                    <div class="col-md-3 price">
+                                        <span>@pz.Price$</span>
+                                    </div>
+                                    <hr>
+                                </a>
                             </div>
                         </div>
                     }
@@ -181,27 +183,12 @@
                         </div>
                     }
 
-                    @*@foreach (var dr in Model.Drinks.Take(1))
-                    {
-                        <div class="list-item">
-                            <div class="row ">
-                                <div class="col-md-9 for-hover">
-                                    <h3>@dr.BigMenuFoodName</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                </div>
-                                <div class="col-md-3 price">
-                                    <span>@dr.Price$</span>
-                                </div>
-                                <hr>
-                            </div>
-                        </div>
-
-                    }*@
+                   
                 </div>
             </div>
         </div>
         <div class="button-menu">
-            <a href="" class="fast-menu-button">Full Menu</a>
+            <a asp-action="Index" asp-controller="Menu" class="fast-menu-button">Full Menu</a>
         </div>
     </div>
 </section>
@@ -289,35 +276,38 @@
                     <thead>
                         <tr class="col-md-12">
                             <th>Day</th>
-                            <th>Monday</th>
-                            <th>Tuesday</th>
-                            <th>Wednesday</th>
-                            <th>Thurdsay</th>
-                            <th>Friday</th>
-                            <th>Saturday</th>
-                            <th>Sunday</th>
+                            @foreach (var hm in Model.OpenTimes)
+                            {
+                                <th>
+                                    @hm.Day
+                                </th>
+
+                            }
                         </tr>
                     </thead>
                     <tbody class="col-md-12">
                         <tr>
-                            <th>Lunch</th>
-                            <td>11am - 15pm</td>
-                            <td>11am - 15pm</td>
-                            <td>11am - 15pm</td>
-                            <td>11am - 15pm</td>
-                            <td>11am - 15pm</td>
-                            <td>11am - 15pm</td>
-                            <td>11am - 15pm</td>
+                            <th>
+                                Launch
+                            </th>
+                            @foreach (var hm in Model.OpenTimes)
+                            {
+
+                                <td>
+                                    @hm.Hours
+                                </td>
+
+                            }
+
                         </tr>
                         <tr>
                             <th>Dinner</th>
-                            <td>Closed</td>
-                            <td>18pm - 23pm</td>
-                            <td>18pm - 23pm</td>
-                            <td>18pm - 23pm</td>
-                            <td>18pm - 23pm</td>
-                            <td>18pm - 23pm</td>
-                            <td>18pm - 23pm</td>
+                            @foreach (var hm in Model.OpenTimes)
+                            {
+                                <td>
+                                    @hm.Hours
+                                </td>
+                            }
                         </tr>
                     </tbody>
                 </table>

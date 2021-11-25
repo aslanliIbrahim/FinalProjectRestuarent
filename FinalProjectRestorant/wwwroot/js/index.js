@@ -5,7 +5,7 @@ let header = document.querySelector("header")
 //click hamburger menu
 let selectElement = (element) => document.querySelector(element);
 let navActive = document.querySelector('nav')
-selectElement = ('.menu-icons'), addEventListener('click', ()=>{
+document.querySelector('.menu-icons').addEventListener('click', () => {
     navActive.classList.toggle('active');
 })
 //end hamburger menu
