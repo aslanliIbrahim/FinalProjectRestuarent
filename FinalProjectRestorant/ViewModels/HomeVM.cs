@@ -18,8 +18,7 @@ namespace FinalProjectRestorant.ViewModels
         public List<Desserts> Desserts { get; set; }
         public List<Drinks> Drinks { get; set; }
         public List<OpenTimes> OpenTimes { get; set; }
-
-
+        public AboutChefHome AboutChefHome { get; set; }
 
     }
 }

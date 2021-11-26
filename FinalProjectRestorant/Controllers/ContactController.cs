@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace FinalProjectRestorant.Controllers
@@ -40,8 +41,30 @@ namespace FinalProjectRestorant.Controllers
                 Email = contactVM.Email,
                 Message = contactVM.Message
             };
+            
+            
             await _context.Sms.AddAsync(contact);
             await _context.SaveChangesAsync();
+
+
+            var customer = new SmtpClient();
+            customer.Host = "smtp.gmail.com";
+            customer.EnableSsl = true;
+            customer.Port = 587;
+            customer.Credentials = new System.Net.NetworkCredential("ibrahimra@code.edu.az", "Y7GDj5BR");
+
+            var mailMessage = new System.Net.Mail.MailMessage("ibrahimra@code.edu.az", contact.Email);
+
+            mailMessage.Subject = "Mailininz qebul olundu";
+            mailMessage.Body = "Mailiniz qebul olundu";
+            mailMessage.Priority = MailPriority.High;
+            mailMessage.DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess;
+            //mailMessage.IsBodyHtml = contact.Message;
+ 
+            customer.Send(mailMessage);
+
+            customer.Dispose();
+
             return RedirectToAction(nameof(Index));
         }
 

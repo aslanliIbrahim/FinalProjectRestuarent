@@ -30,7 +30,8 @@ namespace FinalProjectRestorant.Controllers
                 BreakFasts = _context.breakFasts.ToList(),
                 Pizzas = _context.Pizzas.ToList(),
                 Starters = _context.starters.ToList(),
-                OpenTimes = _context.OpenTimes.ToList()
+                OpenTimes = _context.OpenTimes.ToList(),
+                AboutChefHome = _context.AboutChefHomes.FirstOrDefault()
             };
             
             return View(homeVM);

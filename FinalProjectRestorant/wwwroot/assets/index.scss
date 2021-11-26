@@ -710,7 +710,7 @@ header {
   background-color: $Lynx-White;
   padding-top: 80px;
   padding-bottom: 80px;
-  margin-bottom:0px;
+  margin-bottom:0px !important;
   @media all and (max-width:850px) {
     &{
       background-color: white;

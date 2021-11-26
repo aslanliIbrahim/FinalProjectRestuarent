@@ -366,6 +366,12 @@ header .container nav .nav-list li:hover > .menu-table {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.general-order-side .row .order-side .food-price input {
+    background-color: #F5F5F5 !important;
+}
+    .general-order-side .row .order-side .all-price input {
+        background-color: #F5F5F5 !important;
+    }
 
 .general-order-side .row .order-side .all-price {
   display: -webkit-box;

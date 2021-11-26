@@ -819,7 +819,7 @@ header .container nav .nav-list li:hover > .menu-table {
   background-color: #f7f7f7;
   padding-top: 80px;
   padding-bottom: 80px;
-  margin-bottom:0px;
+  margin-bottom:0px !important;
 }
 
 @media all and (max-width: 850px) {
