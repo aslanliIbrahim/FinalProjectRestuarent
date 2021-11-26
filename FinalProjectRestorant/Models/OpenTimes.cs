@@ -12,8 +12,8 @@ namespace FinalProjectRestorant.Models
        
         [Required]
         public string Hours { get; set; }
-        //[Required]
-        //public string DinnerHours { get; set; }
+        [Required]
+        public string DinnerHours { get; set; }
         [Required]
         public string MealTime { get; set; }
         [Required]
