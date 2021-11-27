@@ -56,7 +56,7 @@ namespace FinalProjectRestorant.Controllers
             var mailMessage = new System.Net.Mail.MailMessage("ibrahimra@code.edu.az", contact.Email);
 
             mailMessage.Subject = "Mailininz qebul olundu";
-            mailMessage.Body = "Mailiniz qebul olundu";
+            mailMessage.Body = contact.Message;
             mailMessage.Priority = MailPriority.High;
             mailMessage.DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess;
             //mailMessage.IsBodyHtml = contact.Message;

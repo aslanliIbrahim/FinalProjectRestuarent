@@ -195,11 +195,17 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    AdminPages
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a asp-action="Index" asp-controller="DashBoard" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Home</p>
+                                    </a>
+                                </li>
                                 <li class="nav-item">
                                     <a asp-action="Index" asp-controller="Homecard" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -225,7 +231,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a asp-action="Index" asp-controller="Pizza" class="nav-link">
+                                    <a asp-action="Index" asp-controller="PizzaMenu" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pizzas</p>
                                     </a>
@@ -252,6 +258,36 @@
                                     <a asp-action="Index" asp-controller="Order" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Order</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="Index" asp-controller="AboutChef" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>AboutChefHome</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="Index" asp-controller="Slides" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Slides</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="Index" asp-controller="About" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>About</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="Index" asp-controller="OurChef" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>OurChef</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="Index" asp-controller="Contact" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Contact</p>
                                     </a>
                                 </li>
                             </ul>
