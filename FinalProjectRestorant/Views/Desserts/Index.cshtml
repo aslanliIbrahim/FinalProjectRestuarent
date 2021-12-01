@@ -78,17 +78,17 @@
             <nav class="d-flex justify-content-center">
                 <ul class="pagination">
                     <li class="page-item  @(ViewBag.ActivePage==1?"disabled":"")">
-                        <a class="page-link" asp-route-page="@(ViewBag.ActivePage==1?ViewBag.pageCount:ViewBag.ActivePage+1)">Previous</a>
+                        <a class="page-link" style="background-color:grey; color:white; border-color:white;" asp-route-page="@(ViewBag.ActivePage==1?ViewBag.pageCount:ViewBag.ActivePage+1)">Previous</a>
                     </li>
                     @for (int i = 1; i <= ViewBag.pageCount; i++)
                     {
 
                         <li class="page-item @(ViewBag.ActivePage == i ? "active":"")">
-                            <a class="page-link" asp-action="Index" asp-controller="Desserts" asp-route-page="@i">@i</a>
+                            <a class="page-link" style="background-color:grey; color:white; border-color:white;" asp-action="Index" asp-controller="Desserts" asp-route-page="@i">@i</a>
                         </li>
                     }
                     <li class="page-item @(ViewBag.ActivePage==ViewBag.pageCount?"disabled":"")">
-                        <a class="page-link" asp-action="Index" asp-controller="Desserts" asp-route-page="@(ViewBag.ActivePage==ViewBag.pageCount?ViewBag.pageCount:ViewBag.ActivePage+1)">Next</a>
+                        <a class="page-link" style="background-color:grey; color:white; border-color:white;" asp-action="Index" asp-controller="Desserts" asp-route-page="@(ViewBag.ActivePage==ViewBag.pageCount?ViewBag.pageCount:ViewBag.ActivePage+1)">Next</a>
                     </li>
                 </ul>
             </nav>

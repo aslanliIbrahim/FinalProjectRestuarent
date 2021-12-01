@@ -1,7 +1,9 @@
 ﻿using FinalProjectRestorant.DAL;
+using FinalProjectRestorant.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +26,6 @@ namespace FinalProjectRestorant.Areas.AdminPanel.Controllers
         {
             return View(_context.AdminOrders);
         }
+        
     }
 }

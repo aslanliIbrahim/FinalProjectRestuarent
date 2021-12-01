@@ -27,7 +27,7 @@
                                 @Model.slides.ElementAt(0).Description
                             </p>
                         </div>
-                        <a href="#" class="btn button" data-aos="fade-down">View menu</a>
+                        <a asp-action="Index" asp-controller="Menu"  class="btn button" data-aos="fade-down">View menu</a>
                     </div>
                 </section>
             </div>
@@ -36,7 +36,7 @@
 </div>
 
 
-<section class="our-chef" style="margin-bottom:400px;">
+<section class="our-chef" style="margin-bottom:400px !important;">
     <div class="container content">
         <div class="row">
             @foreach (var chef in Model.Ourchef)

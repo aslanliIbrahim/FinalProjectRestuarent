@@ -1,0 +1,74 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Update";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Example <small>Update</small></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form id="quickForm" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Photo"></label>
+                                <input asp-for="Photo" class="form-control" placeholder="Enter Text" accept="image">
+                                <span asp-validation-for="Photo" class="text-danger"></span>
+
+                                <label asp-for="Adress"></label>
+                                <input asp-for="Adress" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Adress" class="text-danger"></span>
+
+                                <label asp-for="Email"></label>
+                                <input asp-for="Email" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+
+                                <label asp-for="Eogo"></label>
+                                <input asp-for="Eogo" class="form-control" placeholder="Place enter font-awosome">
+                                <span asp-validation-for="Eogo" class="text-danger"></span>
+
+
+                                <label asp-for="PhoneNumber"></label>
+                                <input asp-for="PhoneNumber" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                                <label asp-for="SocialMedia"></label>
+                                <input asp-for="SocialMedia" class="form-control" placeholder="Enter Text">
+                                <span asp-validation-for="SocialMedia" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a asp-action="Index" class="btn btn-danger">Cancel</a>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+@section Script{
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+

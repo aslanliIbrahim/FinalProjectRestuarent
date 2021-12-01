@@ -15,6 +15,7 @@ minus.addEventListener('click',()=>{
     }
 
     count.innerText = priceValue;
+    allprc.value = count.innerText * foodprc.value;
 });
 plus.addEventListener('click',()=>{
     let priceValue=count.innerText;

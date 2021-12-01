@@ -557,6 +557,7 @@ namespace FinalProjectRestorant.Migrations
                         .HasMaxLength(255);
 
                     b.Property<string>("Eogo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
@@ -568,9 +569,6 @@ namespace FinalProjectRestorant.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("SocialMedia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Video")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

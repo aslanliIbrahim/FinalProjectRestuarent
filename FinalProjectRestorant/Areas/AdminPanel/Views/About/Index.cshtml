@@ -3,27 +3,13 @@
     ViewData["Title"] = "Index";
     int count = 1;
 }
-
+<section>
     <div class="container-fluid">
         <div class="row">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Responsive Hover Table</h3>
-
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="col-12 my-3">
                             <a asp-action="Create" class="btn btn-success">Create</a>
                         </div>
@@ -49,48 +35,65 @@
                                 <tbody>
                                     @foreach (var st in Model)
                                     {
-                                    <tr class="w-25">
-                                        <td>
-                                            @count
-                                        </td>
-                                        <td>
-                                            <img src="~/photos/about-photo/@st.Image" width="300px" />
-                                        </td>
-                                        <td>
-                                            @st.Title
-                                        </td>
-                                        <td>
-                                            @st.Description
-                                        </td>
-                                        <td>
-                                            @st.GourMet
-                                        </td>
-                                        <td>
-                                            @st.CleanTastes
-                                        </td>
-                                        <td>
-                                            @st.ModernEnvironment
-                                        </td>
+                                        <tr class="w-25">
+                                            <td>
+                                                @count
+                                            </td>
+                                            <td>
+                                                <img src="~/photos/about-photo/@st.Image" style="width:300px;"  />
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    @st.Title
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    @st.Description
+                                                </p>
+                                               
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    @st.GourMet
+                                                </p>
+                                               
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    @st.CleanTastes
+                                                </p>
+                                                
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    @st.ModernEnvironment
+                                                </p>
+                                               
+                                            </td>
 
-                                        <td>
-                                            @st.AboutFood
-                                        </td>
+                                            <td>
+                                                <p>
+                                                    @st.AboutFood
+                                                </p>
+                                                
+                                            </td>
 
-                                        <td>
-                                            <a asp-action="Update" asp-route-id="@st.Id" class="btn btn-primary">
-                                                <i class="fas fa-wrench"></i>
-                                            </a>
-                                            @if (count > 1)
-                                            {
-
-                                                <a asp-action="Delete" asp-route-id="@st.Id" class="btn btn-danger">
-                                                    <i class="far fa-trash-alt"></i>
+                                            <td>
+                                                <a asp-action="Update" asp-route-id="@st.Id" class="btn btn-primary">
+                                                    <i class="fas fa-wrench"></i>
                                                 </a>
+                                                @if (count > 1)
+                                                {
 
-                                            }
+                                                    <a asp-action="Delete" asp-route-id="@st.Id" class="btn btn-danger">
+                                                        <i class="far fa-trash-alt"></i>
+                                                    </a>
 
-                                        </td>
-                                    </tr>
+                                                }
+
+                                            </td>
+                                        </tr>
                                         count++;
                                     }
 

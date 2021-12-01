@@ -41,8 +41,8 @@ namespace FinalProjectRestorant.Controllers
                 Email = contactVM.Email,
                 Message = contactVM.Message
             };
-            
-            
+
+
             await _context.Sms.AddAsync(contact);
             await _context.SaveChangesAsync();
 
@@ -60,7 +60,7 @@ namespace FinalProjectRestorant.Controllers
             mailMessage.Priority = MailPriority.High;
             mailMessage.DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess;
             //mailMessage.IsBodyHtml = contact.Message;
- 
+
             customer.Send(mailMessage);
 
             customer.Dispose();
